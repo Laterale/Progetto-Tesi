@@ -1,0 +1,53 @@
+{
+  "name": "sketchlagoon",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "db": "drizzle-kit",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "@ai-sdk/openai": "^0.0.61",
+    "@ark-ui/react": "^4.0.0",
+    "@formatjs/intl-localematcher": "^0.5.4",
+    "@libsql/client": "^0.14.0",
+    "@t3-oss/env-nextjs": "^0.11.1",
+    "ai": "^3.4.0",
+    "better-sqlite3": "^11.3.0",
+    "clsx": "^2.1.0",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.36.4",
+    "framer-motion": "^11.0.5",
+    "jsonwebtoken": "^9.0.2",
+    "nanoid": "^5.0.9",
+    "negotiator": "^0.6.3",
+    "next": "^14.2.3",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-markdown": "^9.0.1",
+    "react-speech-recognition": "^3.10.0",
+    "regenerator-runtime": "^0.14.1",
+    "tailwind-merge": "^2.2.1",
+    "usehooks-ts": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.11",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/negotiator": "^0.6.3",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/react-speech-recognition": "^3.9.5",
+    "autoprefixer": "^10.0.1",
+    "drizzle-kit": "^0.28.1",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
+  }
+}
