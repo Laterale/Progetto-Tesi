@@ -1,6 +1,14 @@
 import { GenericDictionary } from "~/lib/i18n/config"
 
 const en = {
+  menu: {
+    title: "MENU",
+    description: (
+      <>
+      poop
+      </>
+    ),
+  },  
   euMap: {
     title: "Sketchlagoon",
     description: (

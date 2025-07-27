@@ -2,7 +2,6 @@ import { motion } from "framer-motion"
 import LocaleSwitcher from "~/components/locale-switcher"
 import PageSwitcher, { pageIds } from "~/components/page-switcher"
 import { useDictionary } from "~/lib/i18n"
-import { useEffect, useRef, useState } from "react";
 
 export const EuMapBackground = () => {
   return (
@@ -61,7 +60,6 @@ export const EuMapContent = () => {
       />
       </div>
     </div>
-</div>
-
+  </div>
   )
 }

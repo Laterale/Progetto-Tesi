@@ -4,6 +4,7 @@ import env from "~/lib/env"
 import { useDictionary } from "~/lib/i18n"
 
 export const pageIds = {
+  menu: "menu",
   eu: "eu-map",
   lagoon: "lagoon-map",
   drawings: "drawings",

@@ -1,6 +1,14 @@
 import { MainDictionary } from "~/dictionaries/en"
 
 export default {
+  menu: {
+    title: "MENU",
+    description: (
+      <>
+      cacca
+      </>
+    ),
+  },  
   euMap: {
     title: "Sketchlagoon",
     description: (

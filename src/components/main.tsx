@@ -11,15 +11,18 @@ import { ChatBackground, ChatContent } from "~/components/sections/section4-chat
 import { EndingContent } from "~/components/sections/section5-ending"
 import env from "~/lib/env"
 import { useScrollDirection } from "~/lib/scroll-direction"
+import { MenuBackground, MenuContent } from "./sections/section0-menu"
 
 const Main = () => {
   const container = useRef<HTMLDivElement>(null)
+  const div0 = useRef<HTMLDivElement>(null)
   const div1 = useRef<HTMLDivElement>(null)
   const div2 = useRef<HTMLDivElement>(null)
   const div3 = useRef<HTMLDivElement>(null)
   const div4 = useRef<HTMLDivElement>(null)
   const div5 = useRef<HTMLDivElement>(null)
 
+  const div0InView = useInView(div0, { amount: 0.5 })
   const div1InView = useInView(div1, { amount: 0.5 })
   const div2InView = useInView(div2, { amount: 0.5 })
   const div3InView = useInView(div3, { amount: 0.5 })
@@ -39,6 +42,7 @@ const Main = () => {
       {/* <BreakpointDisplay /> */}
       <div className="fixed inset-0 flex bg-sky-200">
         <AnimatePresence mode="wait">
+          {div0InView && <MenuBackground key="div0-bg"/>}
           {div1InView && <EuMapBackground key="div1-bg" />}
           {div2InView && (
             <LagoonMapBackground
@@ -54,6 +58,13 @@ const Main = () => {
         ref={container}
         className="flex flex-col [&>*]:shrink-0 max-h-screen overflow-x-hidden overflow-y-auto overscroll-none snap-y snap-mandatory relative no-scrollbars touch-none"
       >
+        <section
+          ref={div0}
+          id={pageIds.menu}
+          className="h-screen snap-center pointer-events-none relative"
+        >
+          <MenuContent />
+        </section>        
         <section
           ref={div1}
           id={pageIds.eu}
