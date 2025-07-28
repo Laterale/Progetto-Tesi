@@ -9,12 +9,16 @@ const StartButton: FC<{
 }> = ({className}) => {
     //const dictionary = useDictionary()
     return(
-        <div>
+        <div 
+        className={cn("p-3 bg-white rounded-full border-2 border-black shadow-solid-base",className)}
+        >
             <button
             className={cn("flex items-center outline-none transition-all",className)}
             onClick={() =>document.getElementById(pageIds.eu ?? "")?.scrollIntoView({ behavior: "smooth" })}
             >
-                <span>{"Here we go!"}</span>
+                <span>
+                    {"Here we go!"}
+                </span>
             </button>
         </div>
     )

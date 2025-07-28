@@ -29,8 +29,7 @@ export const MenuContent = () =>{
                 {dictionary.description}
             </p>
             <div className="lg:flex lg:justify-between grid grid-cols-2 items-end mt-auto">
-                <StartButton
-                className="max-w-[250px] min-w-[169px] col-span-1 translate-y-10 lg:relative lg:translate-x-[60%] lg:-translate-y-32">
+                <StartButton>
                 </StartButton>       
             </div>
         </div>
