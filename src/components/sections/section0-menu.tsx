@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 import { useDictionary } from "~/lib/i18n"
-import PageSwitcher, { pageIds } from "../page-switcher"
+import StartButton  from "../start-button"
 
 export const MenuBackground = () => {
     return(
@@ -8,11 +8,10 @@ export const MenuBackground = () => {
         className="h-full w-full  bg-sky-600"
         initial = {{opacity: 0}}
         animate = {{opacity: 1}}      
-        exit={{ opacity: 0 }}
-        transition={{ duration: 1.0 }}
+        exit = {{ opacity: 0 }}
+        transition = {{ duration: 1.0 }}
         >
             <div className="">
-
             </div>
         </motion.div>
     )
@@ -30,10 +29,9 @@ export const MenuContent = () =>{
                 {dictionary.description}
             </p>
             <div className="lg:flex lg:justify-between grid grid-cols-2 items-end mt-auto">
-                <PageSwitcher
-                currentPageId={pageIds.menu}
-                className="max-w-[250px] min-w-[169px] col-span-1 translate-y-10 lg:relative lg:translate-x-[60%] lg:-translate-y-32"
-                />           
+                <StartButton
+                className="max-w-[250px] min-w-[169px] col-span-1 translate-y-10 lg:relative lg:translate-x-[60%] lg:-translate-y-32">
+                </StartButton>       
             </div>
         </div>
     </div>
