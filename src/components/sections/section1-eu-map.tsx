@@ -44,7 +44,7 @@ export const EuMapContent = () => {
   const { euMap: dictionary } = useDictionary()
 
   return (
-  <div className="h-full w-full grid max-lg:grid-rows-2 lg:grid lg:grid-cols-5">
+  <div className="h-full w-full grid lg:grid-cols-5">
     <div className="lg:col-span-2 font-hand flex flex-col p-8 pointer-events-auto max-lg:max-h-[50vh] max-lg:justify-center max-lg:h-[50vh]">
       <h1 className="text-[clamp(2rem,8vw,3rem)] tracking-wide mb-4 break-words leading-snug lg:text-[clamp(3rem,5vw,4rem)] max-lg:leading-tight">
         {dictionary.title}
