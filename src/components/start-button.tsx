@@ -17,7 +17,7 @@ const StartButton: FC<{
             onClick={() =>document.getElementById(pageIds.eu ?? "")?.scrollIntoView({ behavior: "smooth" })}
             >
                 <span>
-                    {"Here we go!"}
+                    {"INIZIAMO!"}
                 </span>
             </button>
         </div>

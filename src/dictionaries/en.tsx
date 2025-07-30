@@ -5,7 +5,8 @@ const en = {
     title: "MENU",
     description: (
       <>
-      poop
+      Welcome to Sketchlagoon!
+      Come with me, I'll show you this fucking site.
       </>
     ),
   },  

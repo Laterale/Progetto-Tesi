@@ -2,10 +2,11 @@ import { MainDictionary } from "~/dictionaries/en"
 
 export default {
   menu: {
-    title: "MENU",
+    title: "SKETCHLAGOON",
     description: (
       <>
-      cacca
+      Benvenuto su sto Sketchlagoon! 
+      Vieni con me che ti faccio vedere sto cazzo di sito.
       </>
     ),
   },  

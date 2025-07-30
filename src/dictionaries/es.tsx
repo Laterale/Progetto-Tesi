@@ -5,7 +5,7 @@ export default {
     title: "MENU",
     description: (
       <>
-      caca
+      Bienvenido ajajaj. Me gusta la paella deo can.
       </>
     ),
   },  

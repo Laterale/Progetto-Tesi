@@ -21,7 +21,7 @@ export const MenuContent = () =>{
     const { menu: dictionary } = useDictionary()
     return(
     <div className="h-full w-full grid grid-cols-3 grid-rows-3 font-hand pointer-events-auto">
-        <div className="col-start-2 flex flex-col p-10">
+        <div className="col-start-1 col-span-3 flex flex-col p-10">
             <h1 className="text-[clamp(2rem,8vw,3rem)] lg:text-[clamp(3rem,5vw,4rem)] text-center tracking-wide break-words leading-snug ">
                 {dictionary.title}
             </h1>
