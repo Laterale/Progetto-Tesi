@@ -2,10 +2,10 @@ import { MainDictionary } from "~/dictionaries/en"
 
 export default {
   menu: {
-    title: "MENU",
+    title: "SKETCHLAGOON",
     description: (
       <>
-      Bienvenido ajajaj. Me gusta la paella deo can.
+      
       </>
     ),
   },  

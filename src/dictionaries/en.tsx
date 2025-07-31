@@ -2,11 +2,10 @@ import { GenericDictionary } from "~/lib/i18n/config"
 
 const en = {
   menu: {
-    title: "MENU",
+    title: "SKETCHLAGOON",
     description: (
       <>
       Welcome to Sketchlagoon!
-      Come with me, I'll show you this fucking site.
       </>
     ),
   },  

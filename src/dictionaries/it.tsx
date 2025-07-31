@@ -6,7 +6,6 @@ export default {
     description: (
       <>
       Benvenuto su sto Sketchlagoon! 
-      Vieni con me che ti faccio vedere sto cazzo di sito.
       </>
     ),
   },  
