@@ -5,16 +5,25 @@ import StartButton  from "../start-button"
 export const MenuBackground = () => {
     return(
         <motion.div
-        className="h-full w-full grid grid-cols-5 bg-sky-300 overflow-hidden"
+        className="h-full w-full grid lg:grid-cols-5 grid-rows-2 bg-[#9AD5F6] overflow-hidden"
         initial = {{opacity: 0}}
         animate = {{opacity: 1}}      
         exit = {{ opacity: 0 }}
         transition = {{ duration: 1.0 }}
         >
             <motion.img
-            src="/assets/Mar_Menor_Mascotte.png"
+            src="/assets/maps/mar-menor.png"
+            alt="Mar Menor"
+            className="lg:col-span-3 col-span-5"
+            initial={{ opacity: 0, scale: 1.2 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.2 }}
+            transition={{ duration: 0.7 }}
+            />
+            <motion.img
+            src="/assets/upper-mascotte.png"
             alt="Mascotte Start"
-            className="p-14 col-span-2 col-start-4 object-bottom"
+            className="h-full col-start-4 row-start-2 col-span-2"
             initial={{ opacity: 0, scale: 1.2 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 1.2 }}

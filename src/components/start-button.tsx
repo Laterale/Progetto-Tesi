@@ -10,7 +10,7 @@ const StartButton: FC<{
     //const dictionary = useDictionary()
     return(
         <div 
-        className={cn("p-5 bg-white rounded-full border-2 border-black shadow-solid-base",className)}
+        className={cn("p-7 bg-white rounded-full border-2 border-black shadow-solid-base",className)}
         >
             <button
             className={cn("flex items-center outline-none transition-all animate-bounce-medium",className)}
