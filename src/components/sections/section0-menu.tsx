@@ -37,11 +37,14 @@ export const MenuBackground = () => {
 export const MenuContent = () =>{
     return(
     <div className="h-full w-full grid grid-cols-3 grid-rows-3 font-hand pointer-events-auto">
-        <MenuTextBox
-        className="absolute right-10 top-10">
-        </MenuTextBox>
+        <div
+        className="col-start-3 row-start-2 p-16">
+            <MenuTextBox
+            className="p-10">
+            </MenuTextBox>
+        </div>
         <LocaleSwitcher className="absolute left-10 bottom-10"/>
-        <div className="row-start-2 col-span-3 flex-col p-10">
+        <div className="absolute-center">
             <h1 className="text-[clamp(2rem,8vw,3rem)] lg:text-[clamp(3rem,5vw,4rem)] text-center tracking-wide break-words leading-snug ">
                 {"SKETCHLAGOON"}
             </h1>
