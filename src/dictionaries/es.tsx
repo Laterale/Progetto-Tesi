@@ -2,13 +2,27 @@ import { MainDictionary } from "~/dictionaries/en"
 
 export default {
   menu: {
-    title: "SKETCHLAGOON",
-    description: (
+    p1: (
       <>
-      
+      page 1
       </>
     ),
-  },  
+    p2:(
+      <>
+      page 2
+      </>
+    ),
+    p3:(
+      <>
+      page 3
+      </>
+    ),
+    p4:(
+      <>
+      page 4
+      </>
+    ),
+  },   
   euMap: {
     title: "Sketchlagoon",
     description: (

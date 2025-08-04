@@ -1,11 +1,24 @@
 import { GenericDictionary } from "~/lib/i18n/config"
-
 const en = {
   menu: {
-    title: "SKETCHLAGOON",
-    description: (
+    p1: (
       <>
-      Welcome to Sketchlagoon!
+      page 1
+      </>
+    ),
+    p2:(
+      <>
+      page 2
+      </>
+    ),
+    p3:(
+      <>
+      page 3
+      </>
+    ),
+    p4:(
+      <>
+      page 4
       </>
     ),
   },  
