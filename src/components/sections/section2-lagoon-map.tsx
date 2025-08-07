@@ -62,7 +62,7 @@ export const LagoonMapContent = () => {
         <h1 className="text-[clamp(0.5rem,6vw,3rem)] tracking-wide mb-4 break-words leading-snug lg:text-[clamp(3rem,5vw,4rem)] max-lg:leading-tight">
           {dictionary.title}
         </h1>
-        <p className="text-[clamp(0.7rem,3.0vw,1.2rem)] tracking-wide styled-marks max-lg:leading-snug [&_mark]:bg-indigo-300">
+        <p className="text-[clamp(0.8rem,3.0vw,1.2rem)] tracking-wide styled-marks max-lg:leading-snug [&_mark]:bg-indigo-300">
           {dictionary.description}
         </p>
       </div>

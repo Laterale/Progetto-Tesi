@@ -27,7 +27,7 @@ const MenuTextBox: FC<{
   };
   
   return (
-    <div className={cn("rounded-xl bg-[#ecd89f62] border-2 border-black shadow-solid animate-bounce-slight p-5", className)}>
+    <div className={cn("rounded-xl bg-[#ecd89f3f] border-2 border-black shadow-solid animate-bounce-slight p-5", className)}>
       <p className="flex justify-center text-lg mb-4">{page[currentPage]}</p>
 
       <div className="flex justify-evenly items-end">
@@ -36,7 +36,7 @@ const MenuTextBox: FC<{
           disabled={currentPage === 0}
           className="disabled:opacity-50 text-black"
         >
-          Indietro
+          {'<'}
         </button>
         
         <span className="text-sm text-black pl-3 pr-3">
@@ -48,7 +48,7 @@ const MenuTextBox: FC<{
           disabled={currentPage === page.length - 1}
           className="rounded text-black disabled:opacity-50"
         >
-          Avanti
+          {'>'}
         </button>
       </div>
     </div>

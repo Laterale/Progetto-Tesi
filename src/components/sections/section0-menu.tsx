@@ -30,6 +30,15 @@ export const MenuBackground = () => {
             exit={{ opacity: 0, scale: 1.2 }}
             transition={{ duration: 0.7 }}
             />
+            <motion.img
+            src="/assets/icon.png"
+            alt="Mascotte Start"
+            className="absolute right-10 top-10 lg:size-20 size-14"
+            initial={{ opacity: 0, scale: 1.2 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.2 }}
+            transition={{ duration: 0.7 }}
+            />
         </motion.div>
     )
 }
@@ -37,12 +46,12 @@ export const MenuBackground = () => {
 export const MenuContent = () =>{
     return(
     <div className="h-full w-full grid grid-cols-3 grid-rows-3 font-hand pointer-events-auto">
-        <div className="lg:col-start-3 lg:row-start-2 lg:col-span-1 lg:pr-10 lg:pl-10 lg:items-end col-start-1 row-start-2 col-span-3 p-5 flex justify-center items-center">
+        <div className="lg:col-start-3 lg:row-start-2 lg:col-span-1 lg:pr-14 lg:pl-14 lg:items-end col-start-1 row-start-2 col-span-3 p-5 flex justify-center items-center">
             <MenuTextBox className="p-8">    
             </MenuTextBox>
         </div>
         <LocaleSwitcher className="absolute left-10 bottom-10"/>
-        <div className="lg:col-span-2 col-span-3 flex justify-center items-end">
+        <div className="lg:col-span-2 col-span-3 flex justify-center items-end pb-10">
             <h1 className="text-[clamp(2.5rem,8vw,3rem)] lg:text-[clamp(3rem,5vw,4rem)] text-center tracking-wide break-words leading-snug animate-bounce-slight">
                 SKETCHLAGOON
             </h1>
