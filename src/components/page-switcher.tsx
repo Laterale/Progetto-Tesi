@@ -13,6 +13,7 @@ export const pageIds = {
 }
 
 const enabledPageIds = [
+  pageIds.menu,
   pageIds.eu,
   pageIds.lagoon,
   pageIds.drawings,

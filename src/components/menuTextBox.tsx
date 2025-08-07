@@ -27,14 +27,14 @@ const MenuTextBox: FC<{
   };
   
   return (
-    <div className={cn("rounded-3xl bg-white border-2 border-black shadow-solid-base", className)}>
-      <p className="text-lg mb-4">{page[currentPage]}</p>
+    <div className={cn("rounded-xl bg-[#a8eb5127] border-2 border-black shadow-solid animate-bounce-slight", className)}>
+      <p className="flex justify-center text-lg mb-4">{page[currentPage]}</p>
 
       <div className="flex justify-center">
         <button
           onClick={prevPage}
           disabled={currentPage === 0}
-          className="animate-bounce-slight disabled:opacity-50 disabled:animate-none text-gray-800"
+          className="animate-bounce-slight disabled:opacity-50 disabled:animate-none text-black"
         >
           Indietro
         </button>
@@ -46,7 +46,7 @@ const MenuTextBox: FC<{
         <button
           onClick={nextPage}
           disabled={currentPage === page.length - 1}
-          className="rounded text-gray-800 animate-bounce-slight disabled:opacity-50 disabled:animate-none"
+          className="rounded text-black animate-bounce-slight disabled:opacity-50 disabled:animate-none"
         >
           Avanti
         </button>
