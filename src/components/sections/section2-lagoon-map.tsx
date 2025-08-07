@@ -57,23 +57,27 @@ export const LagoonMapContent = () => {
   const { lagoonMap: dictionary } = useDictionary()
 
   return (
-    <div className="h-full w-full grid lg:grid-cols-5">
-      <div className="lg:col-span-2 font-hand flex flex-col p-8 pointer-events-auto max-lg:max-h-[50vh] max-lg:justify-center max-lg:h-[50vh]">
-        <h1 className="text-[clamp(2rem,8vw,3rem)] tracking-wide mb-4 break-words leading-snug lg:text-[clamp(3rem,5vw,4rem)] max-lg:leading-tight">
+    <div className="h-full w-full grid lg:grid-cols-5 font-hand pointer-events-auto">
+      <div className="lg:col-span-2 flex-col pt-8 pl-8 pr-8 max-lg:max-h-[50vh] max-lg:h-[50vh]">
+        <h1 className="text-[clamp(0.5rem,6vw,3rem)] tracking-wide mb-4 break-words leading-snug lg:text-[clamp(3rem,5vw,4rem)] max-lg:leading-tight">
           {dictionary.title}
         </h1>
-        <p className="text-[clamp(0.6rem,3.0vw,1.2rem)] tracking-wide styled-marks [&_mark]:bg-indigo-300 max-lg:leading-snug">
+        <p className="text-[clamp(0.7rem,3.0vw,1.2rem)] tracking-wide styled-marks max-lg:leading-snug [&_mark]:bg-indigo-300">
           {dictionary.description}
         </p>
-        <div className="flex justify-between items-end mt-auto">
-          <div />
+      </div>
+        <div className="hidden lg:flex lg:justify-center lg:col-start-2 lg:items-center lg:col-span-2">
           <PageSwitcher
-            currentPageId={pageIds.lagoon}
-            className="max-w-[250px] min-w-[169px] col-span-1 translate-y-10 lg:relative lg:translate-x-[60%] lg:-translate-y-32"
+          currentPageId={pageIds.lagoon}
+          className="max-w-[250px] min-w-[120px]"
           />
         </div>
-      </div>
-      <div className="lg:col-span-3 lg:max-h-screen overflow-hidden relative" />
+        <div className="lg:hidden absolute-center">
+          <PageSwitcher
+          currentPageId={pageIds.lagoon}
+          className="max-w-[250px] min-w-[120px]"
+          />
+        </div>
     </div>
   )
 }
