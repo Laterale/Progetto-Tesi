@@ -17,9 +17,11 @@ export const DrawingsBackground = () => {
       exit={{ opacity: 0, translateY: 100 }}
       transition={{ duration: 0.7 }}
     >
-      <div className="h-full pointer-events-auto">
-        <img src="/assets/background.svg" alt="" className="h-full w-full object-cover" />
-      </div>
+      <img 
+      src="/assets/background.svg" 
+      alt="Sea" 
+      className="h-full w-full object-cover" 
+      />
     </motion.div>
   )
 }
@@ -42,87 +44,83 @@ export const DrawingsContent = () => {
   }
 
   return (
-    <div className="h-full w-full overflow-hidden relative">
-      <div className="relative h-full pointer-events-auto">
-        <div className="font-hand max-w-4xl p-8">
-          <h1 className="text-4xl lg:text-6xl tracking-wide mb-4 lg:mt-10 lg:mb-32">
-            {dictionary.title}
-          </h1>
-          <div className="text-lg lg:text-2xl tracking-wide flex flex-col gap-2 text-balance">
-            {dictionary.description}
-          </div>
-        </div>
-
-        <PageSwitcher
-          currentPageId={pageIds.drawings}
-          className="font-hand absolute-center-x bottom-4 z-10"
-        />
-
-        <div className="grid grid-cols-12 grid-rows-12 absolute inset-0">
-          {data.map((record) => (
-            <Popover
-              key={record.code}
-              triggerClassName={record.triggerClass}
-              triggerContent={
-                <div
-                  className={record.imageWrapperClass}
-                  onClick={() => setOpenedDrawings([...openedDrawings, record.code])}
-                >
-                  <img
-                    src={record.imageUrl}
-                    alt={(dictionary as any)[record.code].title}
-                    className={cn(
-                      "transition-opacity",
-                      record.imageClass,
-                      openedDrawings.includes(record.code) && "opacity-50"
-                    )}
-                    style={record.imageStyle}
-                  />
-                </div>
-              }
-            >
-              <div className="w-[48rem] max-w-[calc(100vw-64px)] flex flex-col gap-6 py-6 font-hand bg-white rounded-lg border-2 border-black shadow-solid-base overflow-hidden">
-                <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-x-12 gap-y-6 px-6">
-                  <img
-                    src={record.imageUrl}
-                    alt=""
-                    className="h-24 w-24 object-contain md:mr-6 md:order-2"
-                  />
-                  <div className="md:order-1">
-                    <h2 className="text-2xl mb-3">{(dictionary as any)[record.code].title}</h2>
-                    <p className="text-lg styled-marks [&_mark]:bg-rose-300">
-                      {(dictionary as any)[record.code].description}
-                    </p>
-                  </div>
-                </div>
-                <Slideshow>
-                  {record.relatedDrawings.map((drawingUrl, i) => (
-                    <img
-                      key={i}
-                      src={drawingUrl}
-                      alt=""
-                      className={cn(
-                        "shrink-0 h-32 object-cover rounded border border-black",
-                        i % 2 == 0 ? "-rotate-3" : "rotate-3"
-                      )}
-                      onClick={() => openCarousel(record.relatedDrawings, drawingUrl)}
-                    />
-                  ))}
-                </Slideshow>
-              </div>
-            </Popover>
-          ))}
-        </div>
-
-        <FullScreenCarousel
-          drawings={carouselState.drawings}
-          initialDrawing={carouselState.initialDrawing}
-          open={carouselState.open}
-          onOpenChange={({ open }) =>
-            open ? openCarousel(carouselState.drawings, null) : closeCarousel()
-          }
-        />
+    <div className="h-full w-full overflow-hidden relative pointer-events-auto font-hand p-5 grid grid-rows-5 grid-cols-2 items-center">
+      <h1 className="text-[clamp(2rem,3.5vw,5rem)] tracking-wide text-balance lg:text-left text-center col-span-2 lg:col-span-1">
+        {dictionary.title}
+      </h1>
+      <div className="text-base lg:text-2xl tracking-wide text-balance lg:text-left text-center row-start-2 lg:col-span-1 col-span-2 mt-24">
+        {dictionary.description}
       </div>
-    </div>
+      <div className="hidden text-lg lg:text-2xl tracking-wide text-balance text-center">
+        {dictionary.mascotte_dialogue.description}
+      </div>
+      <PageSwitcher
+        currentPageId={pageIds.drawings}
+        className="font-hand absolute-center-x bottom-14 z-10"
+      />
+      <div className="grid grid-cols-12 grid-rows-12 absolute inset-0">
+        {data.map((record) => (
+          <Popover
+            key={record.code}
+            triggerClassName={record.triggerClass}
+            triggerContent={
+              <div
+                className={record.imageWrapperClass}
+                onClick={() => setOpenedDrawings([...openedDrawings, record.code])}
+              >
+                <img
+                  src={record.imageUrl}
+                  alt={(dictionary as any)[record.code].title}
+                  className={cn(
+                    "transition-opacity lg:size-auto size-2/4",
+                    record.imageClass,
+                    openedDrawings.includes(record.code) && "opacity-50"
+                  )}
+                  style={record.imageStyle}
+                />
+              </div>
+            }
+          >
+            <div className="w-[48rem] max-w-[calc(100vw-64px)] flex flex-col gap-6 py-6 font-hand bg-white rounded-lg border-2 border-black shadow-solid-base overflow-hidden">
+              <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-x-12 gap-y-6 px-6">
+                <img
+                  src={record.imageUrl}
+                  alt=""
+                  className="h-24 w-24 object-contain md:mr-6 md:order-2"
+                />
+                <div className="md:order-1">
+                  <h2 className="text-2xl mb-3">{(dictionary as any)[record.code].title}</h2>
+                  <p className="text-lg styled-marks [&_mark]:bg-rose-300">
+                    {(dictionary as any)[record.code].description}
+                  </p>
+                </div>
+              </div>
+              <Slideshow>
+                {record.relatedDrawings.map((drawingUrl, i) => (
+                  <img
+                    key={i}
+                    src={drawingUrl}
+                    alt=""
+                    className={cn(
+                      "shrink-0 h-32 object-cover rounded border border-black",
+                      i % 2 == 0 ? "-rotate-3" : "rotate-3"
+                    )}
+                    onClick={() => openCarousel(record.relatedDrawings, drawingUrl)}
+                  />
+                ))}
+              </Slideshow>
+            </div>
+          </Popover>
+        ))}
+      </div>
+      <FullScreenCarousel
+        drawings={carouselState.drawings}
+        initialDrawing={carouselState.initialDrawing}
+        open={carouselState.open}
+        onOpenChange={({ open }) =>
+          open ? openCarousel(carouselState.drawings, null) : closeCarousel()
+        }
+      />
+  </div>
   )
 }

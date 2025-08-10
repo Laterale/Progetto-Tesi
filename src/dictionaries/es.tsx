@@ -60,9 +60,15 @@ export default {
           Les pedimos a los niños de la zona del Mar Menor que hicieran dibujos de la laguna. Esto
           es lo que se les ocurrió.
         </p>
-        <p>Haz clic en un dibujo para saber más.</p>
       </>
     ),
+    mascotte_dialogue:{
+      description:(
+        <>
+        <p>Haz clic en un dibujo para saber más.</p>
+        </>
+      )
+    },
     fish: {
       title: "Pez",
       description: (

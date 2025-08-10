@@ -25,7 +25,26 @@ export const LagoonMapBackground: FC<{
       exit={{ opacity: 0 }}
       transition={{ duration: 0.7 }}
     >
-      <div className="lg:col-span-2 font-hand p-8" />
+      <div className="lg:col-span-2 flex lg:justify-center justify-end items-end pl-10 pr-10">
+        <motion.img
+          src="/assets/Mar_Menor_Mascotte.png"
+          alt="Mascotte Full"
+          className="hidden lg:flex lg:size-56"
+          initial={{ opacity: 0, scale: 1.3 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 1.3 }}
+          transition={{ duration: 0.7 }}
+        />
+        <motion.img
+          src="/assets/Mar_Menor_Mascotte_1.png"
+          alt="Mascotte Face"
+          className="lg:hidden size-24"
+          initial={{ opacity: 0, scale: 1.3 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 1.3 }}
+          transition={{ duration: 0.7 }}
+        />
+      </div>
       <div className="lg:col-span-3 lg:max-h-screen relative pointer-events-auto">
         <div className="h-full w-full overflow-hidden">
           <motion.img
@@ -59,7 +78,7 @@ export const LagoonMapContent = () => {
   return (
     <div className="h-full w-full grid lg:grid-cols-5 font-hand pointer-events-auto">
       <div className="lg:col-span-2 flex-col pt-8 pl-8 pr-8 max-lg:max-h-[50vh] max-lg:h-[50vh]">
-        <h1 className="text-[clamp(0.5rem,6vw,3rem)] tracking-wide mb-4 break-words leading-snug lg:text-[clamp(3rem,5vw,4rem)] max-lg:leading-tight">
+        <h1 className="text-[clamp(0.5rem,5vw,3rem)] tracking-wide mb-4 break-words leading-snug lg:text-[clamp(1.5rem,3vw,4rem)] max-lg:leading-tight">
           {dictionary.title}
         </h1>
         <p className="text-[clamp(0.8rem,3.0vw,1.2rem)] tracking-wide styled-marks max-lg:leading-snug [&_mark]:bg-indigo-300">

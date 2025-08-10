@@ -64,7 +64,7 @@ const data: Record[] = [
       "/assets/scans/IMG00009.jpg",
       "/assets/scans/IMG00013.jpg",
     ],
-    triggerClass: "[grid-area:11/2/11/3] relative",
+    triggerClass: "xl:[grid-area:11/2/11/3] [grid-area:12/3/11/4] relative",
     imageWrapperClass: "w-28 lg:w-36 absolute-center",
     imageClass: "object-contain animate-bounce-slight",
     imageStyle: {
@@ -90,7 +90,7 @@ const data: Record[] = [
       "/assets/scans/IMG00027.jpg",
       "/assets/scans/IMG00028.jpg",
     ],
-    triggerClass: "[grid-area:5/5/5/6] md:[grid-area:6/3/6/4] lg:[grid-area:8/3/8/4] relative",
+    triggerClass: "[grid-area:6/5/6/6] md:[grid-area:6/3/6/4] lg:[grid-area:8/3/8/4] relative",
     imageWrapperClass: "w-36 absolute-center",
     imageClass: "object-contain animate-bounce-slight",
     imageStyle: {
@@ -108,7 +108,7 @@ const data: Record[] = [
       "/assets/scans/IMG00013.jpg",
     ],
     triggerClass:
-      "[grid-area:5/9/5/10] md:[grid-area:5/8/5/9] xl:[grid-area:6/6/6/7] 2xl:[grid-area:6/5/6/6] relative",
+      "[grid-area:9/9/9/10] md:[grid-area:9/8/8/9] xl:[grid-area:6/6/6/7] 2xl:[grid-area:6/5/6/6] relative",
     imageWrapperClass: "w-32 absolute-center-x top-0",
     imageClass: "object-contain animate-bounce-slight",
     imageStyle: {
@@ -134,7 +134,7 @@ const data: Record[] = [
       "/assets/scans/IMG00025.jpg",
       "/assets/scans/IMG00028.jpg",
     ],
-    triggerClass: "[grid-area:11/5/11/6] relative",
+    triggerClass: "lg:[grid-area:11/5/11/6] [grid-area:11/11/11/12] relative",
     imageWrapperClass: "w-36 absolute-center-x bottom-0",
     imageClass: "object-contain animate-bounce-slight",
     imageStyle: {
@@ -145,7 +145,7 @@ const data: Record[] = [
     code: "trash",
     imageUrl: "/assets/drawings/trash01c.png",
     relatedDrawings: ["/assets/scans/IMG00005.jpg", "/assets/scans/IMG00010.jpg"],
-    triggerClass: "[grid-area:8/10/8/11] xl:[grid-area:7/11/7/12] relative",
+    triggerClass: "[grid-area:7/10/7/11] xl:[grid-area:7/11/7/12] relative",
     imageWrapperClass: "w-24 absolute-center-x top-0",
     imageClass: "object-contain animate-bounce-slight",
     imageStyle: {
@@ -166,7 +166,7 @@ const data: Record[] = [
       "/assets/scans/IMG00024.jpg",
     ],
     triggerClass:
-      "[grid-area:3/10/3/11] md:[grid-area:3/9/3/10] lg:[grid-area:3/7/3/8] xl:[grid-area:3/8/3/9] relative",
+      "[grid-area:3/3/3/4] md:[grid-area:3/9/3/10] lg:[grid-area:3/7/3/8] xl:[grid-area:3/8/3/9] relative",
     imageWrapperClass: "w-48 lg:w-56 absolute-center-x bottom-0",
     imageClass: "object-contain animate-bounce-rotate-slight origin-bottom-left",
     imageStyle: {
@@ -181,7 +181,7 @@ const data: Record[] = [
       "/assets/scans/IMG00018.jpg",
       "/assets/scans/IMG00020.jpg",
     ],
-    triggerClass: "[grid-area:3/2/3/3] md:[grid-area:3/12/3/13] lg:[grid-area:3/11/3/12] relative",
+    triggerClass: "[grid-area:3/11/3/12] md:[grid-area:4/4/4/3] lg:[grid-area:3/11/3/12] relative",
     imageWrapperClass: "w-20 lg:w-24 absolute max-lg:right-0 lg:absolute-center-x top-12 md:top-0",
     imageClass: "object-contain animate-bounce-slight",
     imageStyle: {

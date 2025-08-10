@@ -1,5 +1,4 @@
 import { motion } from "framer-motion"
-import LocaleSwitcher from "~/components/locale-switcher"
 import PageSwitcher, { pageIds } from "~/components/page-switcher"
 import { useDictionary } from "~/lib/i18n"
 
@@ -12,7 +11,26 @@ export const EuMapBackground = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.7 }}
     >
-      <div className="lg:col-span-2 p-8" />
+      <div className="lg:col-span-2 flex lg:justify-center justify-end items-end pl-10 pr-10">
+        <motion.img
+          src="/assets/Mar_Menor_Mascotte.png"
+          alt="Mascotte Face"
+          className="hidden lg:flex lg:size-56"
+          initial={{ opacity: 0, scale: 1.3 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 1.3 }}
+          transition={{ duration: 0.7 }}
+        />
+        <motion.img
+          src="/assets/Mar_Menor_Mascotte_1.png"
+          alt="Mascotte Face"
+          className="lg:hidden lg:size-auto size-24"
+          initial={{ opacity: 0, scale: 1.3 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 1.3 }}
+          transition={{ duration: 0.7 }}
+        />
+      </div>
       <div className="lg:col-span-3 lg:max-h-screen relative pointer-events-auto">
         <div className="h-full w-full overflow-hidden ">
           <motion.img
@@ -49,7 +67,7 @@ export const EuMapContent = () => {
       <h1 className="text-[clamp(2rem,8vw,3rem)] tracking-wide mb-4 break-words leading-snug lg:text-[clamp(3rem,5vw,4rem)] max-lg:leading-tight">
         {dictionary.title}
       </h1>
-      <p className="text-[clamp(1rem,3.0vw,1.2rem)] tracking-wide styled-marks [&_mark]:bg-purple-300 max-lg:leading-snug ">
+      <p className="text-[clamp(0.8rem,3.0vw,1.2rem)] tracking-wide styled-marks [&_mark]:bg-purple-300 max-lg:leading-snug mb-auto">
         {dictionary.description}
       </p>
     </div>

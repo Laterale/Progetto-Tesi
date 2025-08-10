@@ -56,9 +56,15 @@ const en = {
           We asked children from the Mar Menor area to create drawings of the lagoon. Here is what
           they came up with.
         </p>
-        <p>Click on a drawing to find out more.</p>
       </>
     ),
+    mascotte_dialogue:{
+      description:(
+        <>
+        <p>Click on a drawing to find out more!</p>
+        </>
+      )
+    },
     fish: {
       title: "Fish",
       description: (

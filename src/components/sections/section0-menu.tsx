@@ -24,7 +24,7 @@ export const MenuBackground = () => {
             <motion.img
             src="/assets/Mar_Menor_Mascotte_2.png"
             alt="Mascotte Start"
-            className="absolute lg:right-1/4 bottom-0 lg:size-96 size-80"
+            className="absolute lg:right-40 bottom-0 lg:size-96 size-80"
             initial={{ opacity: 0, scale: 1.2 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 1.2 }}
@@ -45,9 +45,9 @@ export const MenuBackground = () => {
 
 export const MenuContent = () =>{
     return(
-    <div className="h-full w-full grid grid-cols-3 grid-rows-3 font-hand pointer-events-auto">
-        <div className="lg:col-start-3 lg:row-start-2 lg:col-span-1 lg:pr-14 lg:pl-14 lg:items-end col-start-1 row-start-2 col-span-3 p-5 flex justify-center items-center">
-            <MenuTextBox className="p-8">    
+    <div className="h-full w-full grid grid-cols-3 grid-rows-3 font-hand pointer-events-auto p-10">
+        <div className="lg:col-start-3 lg:row-start-2 lg:col-span-1 lg:items-center col-start-1 row-start-2 col-span-3 flex justify-center items-center">
+            <MenuTextBox className="p-5">    
             </MenuTextBox>
         </div>
         <LocaleSwitcher className="absolute left-10 bottom-10"/>
@@ -57,7 +57,8 @@ export const MenuContent = () =>{
             </h1>
         </div>
         <div className="row-start-3 lg:col-start-1 col-start-2 lg:col-span-2 flex justify-center items-center">
-            <StartButton>
+            <StartButton
+            className={"lg:p-3 p-2"}>
             </StartButton>       
         </div>
     </div>
