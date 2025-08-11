@@ -45,10 +45,10 @@ export const DrawingsContent = () => {
 
   return (
     <div className="h-full w-full overflow-hidden relative pointer-events-auto font-hand p-5 grid grid-rows-5 grid-cols-2 items-center">
-      <h1 className="text-[clamp(1.8rem,3.5vw,5rem)] tracking-wide text-balance lg:text-left text-center col-span-2 lg:col-span-1">
+      <h1 className="text-[clamp(1.8rem,3vw,4rem)] tracking-wide text-balance lg:text-left text-center col-span-2 lg:col-span-1">
         {dictionary.title}
       </h1>
-      <div className="text-base lg:text-2xl tracking-wide text-balance lg:text-left text-center row-start-2 lg:col-span-1 col-span-2 mt-24">
+      <div className="text-base lg:text-2xl tracking-wide text-balance lg:text-left text-center row-start-2 lg:col-span-1 col-span-2 mt-20">
         {dictionary.description}
       </div>
       <div className="hidden text-lg lg:text-2xl tracking-wide text-balance text-center">

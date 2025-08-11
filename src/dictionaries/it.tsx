@@ -9,17 +9,14 @@ export default {
     ),
     p2:(
       <>
-      Come puoi ben vedere skibidiboppy.
       </>
     ),
     p3:(
       <>
-      Forza Napoli!
       </>
     ),
     p4:(
       <>
-      La mama de la mama de la mama de la mama de la mama de la mama de la mama de la mama de la mama de la mama.
       </>
     ),
   },  

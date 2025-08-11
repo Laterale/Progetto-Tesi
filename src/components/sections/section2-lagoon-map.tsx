@@ -88,7 +88,7 @@ export const LagoonMapContent = () => {
         <div className="hidden lg:flex lg:justify-center lg:col-start-2 lg:items-center lg:col-span-2">
           <PageSwitcher
           currentPageId={pageIds.lagoon}
-          className="max-w-[250px] min-w-[120px]"
+          className="flexmax-w-[250px] min-w-[120px]"
           />
         </div>
         <div className="lg:hidden absolute-center">

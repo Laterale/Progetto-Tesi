@@ -88,26 +88,27 @@ export const ChatContent = () => {
 
   return (
     <div className="h-full w-full grid max-lg:grid-rows-2 lg:grid lg:grid-cols-5 pointer-events-auto">
-      <div className="lg:col-span-2 font-hand flex flex-col p-8">
-        <h1 className="text-4xl lg:text-6xl tracking-wide lg:mt-4 mb-6 lg:mb-12">
+      <div className="lg:col-span-2 font-hand flex flex-col p-7">
+        <h1 className="text-[clamp(1.5rem,4vw,5rem)] tracking-wide ">
           {dictionary.title}
         </h1>
-        <p className="text-lg lg:text-2xl [line-height:2.25rem] lg:[line-height:2.5rem] tracking-wide styled-marks [&_mark]:bg-emerald-300 mb-6">
+        <p className="text-[clamp(0.8rem,1.5vw,2.5rem)]  lg:[line-height:2.5rem] tracking-wide styled-marks [&_mark]:bg-emerald-300">
           {dictionary.description}
         </p>
-        <ul className="flex flex-col gap-6">
-          {dictionary.exampleQuestions.map((question, i) => (
-            <li key={i} className="flex">
-              <button
-                className="grow px-4 py-3 text-lg text-left bg-white rounded-xl border-2 border-black shadow-solid-base hover:shadow-solid-lg transition-shadow"
-                onClick={() => handleQuestionClick(question)}
-              >
-                {question}
-              </button>
-            </li>
-          ))}
-        </ul>
-        <PageSwitcher currentPageId={pageIds.chat} className="mx-auto mt-auto" />
+        <div className="bg-white border-2 rounded-xl border-black flex flex-col max-h-[30vh] overflow-y-auto">
+        {dictionary.exampleQuestions.map((question, i) => (
+          <li key={i} className="flex">
+            <button
+            className="grow rounded-xl px-4 lg:py-3 py-2 text-[clamp(0.8rem,1vw,1.5rem)] text-left hover:bg-emerald-100" 
+            onClick={() => handleQuestionClick(question)}
+            >
+              {'>'} {question}
+            </button>
+          </li>
+        ))}
+        </div>
+        <PageSwitcher currentPageId={pageIds.chat} className="hidden lg:flex mx-auto mt-auto" />
+        <PageSwitcher currentPageId={pageIds.chat} className="lg:hidden absolute-center mx-auto mt-auto" />
       </div>
       <div className="lg:col-span-3 lg:max-h-screen flex flex-col overflow-hidden relative">
         <div className="grow px-6 py-12 overflow-y-auto">
