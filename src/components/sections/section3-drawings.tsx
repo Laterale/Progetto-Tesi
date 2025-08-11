@@ -45,7 +45,7 @@ export const DrawingsContent = () => {
 
   return (
     <div className="h-full w-full overflow-hidden relative pointer-events-auto font-hand p-5 grid grid-rows-5 grid-cols-2 items-center">
-      <h1 className="text-[clamp(2rem,3.5vw,5rem)] tracking-wide text-balance lg:text-left text-center col-span-2 lg:col-span-1">
+      <h1 className="text-[clamp(1.8rem,3.5vw,5rem)] tracking-wide text-balance lg:text-left text-center col-span-2 lg:col-span-1">
         {dictionary.title}
       </h1>
       <div className="text-base lg:text-2xl tracking-wide text-balance lg:text-left text-center row-start-2 lg:col-span-1 col-span-2 mt-24">
@@ -81,16 +81,16 @@ export const DrawingsContent = () => {
               </div>
             }
           >
-            <div className="w-[48rem] max-w-[calc(100vw-64px)] flex flex-col gap-6 py-6 font-hand bg-white rounded-lg border-2 border-black shadow-solid-base overflow-hidden">
+            <div className="w-[48rem] max-w-[calc(100vw-20px)] max-h-[calc(100vw-50px)] flex flex-col gap-6 py-6 font-hand bg-white rounded-lg border-2 border-black shadow-solid-base overflow-scroll">
               <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-x-12 gap-y-6 px-6">
                 <img
                   src={record.imageUrl}
                   alt=""
-                  className="h-24 w-24 object-contain md:mr-6 md:order-2"
+                  className="hidden xl:flex xl:h-24 xl:w-24 h-16 w-16 object-contain md:mr-6 md:order-2"
                 />
                 <div className="md:order-1">
-                  <h2 className="text-2xl mb-3">{(dictionary as any)[record.code].title}</h2>
-                  <p className="text-lg styled-marks [&_mark]:bg-rose-300">
+                  <h2 className="text-[clamp(1.5rem,2vw,4rem)] mb-3">{(dictionary as any)[record.code].title}</h2>
+                  <p className="text-[clamp(0.8rem,1vw,3rem)] styled-marks [&_mark]:bg-rose-300">
                     {(dictionary as any)[record.code].description}
                   </p>
                 </div>
@@ -102,7 +102,7 @@ export const DrawingsContent = () => {
                     src={drawingUrl}
                     alt=""
                     className={cn(
-                      "shrink-0 h-32 object-cover rounded border border-black",
+                      "shrink-0 h-32  object-cover rounded border border-black",
                       i % 2 == 0 ? "-rotate-3" : "rotate-3"
                     )}
                     onClick={() => openCarousel(record.relatedDrawings, drawingUrl)}
