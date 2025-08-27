@@ -10,10 +10,10 @@ const StartButton: FC<{
     //const dictionary = useDictionary()
     return(
         <div 
-        className={cn("bg-white rounded-full border-2 border-black shadow-solid-base",className)}
+        className={cn("bg-white rounded-full border-2 border-black shadow-solid-base animate-bounce-slight",className)}
         >
             <button
-            className={cn("items-center animate-bounce-medium",className)}
+            className={cn("items-center",className)}
             onClick={() =>document.getElementById(pageIds.eu ?? "")?.scrollIntoView({ behavior: "smooth" })}
             >
                 <span>

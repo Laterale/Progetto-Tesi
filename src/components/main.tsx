@@ -44,12 +44,7 @@ const Main = () => {
         <AnimatePresence mode="wait">
           {div0InView && <MenuBackground key="div0-bg"/>}
           {div1InView && <EuMapBackground key="div1-bg" />}
-          {div2InView && (
-            <LagoonMapBackground
-              key="div2-bg"
-              animation={scrollDirection == "down" ? "zoom-in" : "zoom-out"}
-            />
-          )}
+          {div2InView && <LagoonMapBackground key="div2-bg" animation={scrollDirection == "down" ? "zoom-in" : "zoom-out"}/>}
           {div3InView && <DrawingsBackground key="div3-bg" />}
           {div4InView && <ChatBackground key="div4-bg" />}
         </AnimatePresence>

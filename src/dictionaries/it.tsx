@@ -2,23 +2,10 @@ import { MainDictionary } from "~/dictionaries/en"
 
 export default {
   menu: {
-    p1: (
-      <>
-      Benvenuto su SketchLagoon!
-      </>
-    ),
-    p2:(
-      <>
-      </>
-    ),
-    p3:(
-      <>
-      </>
-    ),
-    p4:(
-      <>
-      </>
-    ),
+    p1: "Benvenuto su SketchLagoon!",
+    p2: "Il mio nome è Marco Pescic e ti guiderò nel viaggio dove esploreremo la bellezza e i problemi delle lagune.",
+    p3: "Gigiiii, Gigi perchè non l'hai detto! Gigi grande campione perchè non l'hai dettooo",
+    p4: "Basta con questi quii!",
   },  
   euMap: {
     title: "Sketchlagoon",
