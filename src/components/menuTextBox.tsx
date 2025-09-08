@@ -26,7 +26,7 @@ const MenuTextBox: FC<{ className?: string }> = ({ className }) => {
   return (
     <div
       className={cn(
-        "text-center text-balance",
+        "text-center",
         className
       )}
     >
@@ -48,6 +48,7 @@ const MenuTextBox: FC<{ className?: string }> = ({ className }) => {
       )
     }
       <div className="flex justify-evenly items-end">
+
         <button
           onClick={prevPage}
           disabled={currentPage === 0}
@@ -63,11 +64,13 @@ const MenuTextBox: FC<{ className?: string }> = ({ className }) => {
         <button
           onClick={nextPage}
           disabled={currentPage === page.length - 1}
-          className="rounded text-black disabled:opacity-50 animate-bounce-slight disabled:animate-none"
+          className="text-black disabled:opacity-50 animate-bounce-slight disabled:animate-none"
         >
           {">"}
         </button>
+
       </div>
+      
     </div>
   );
 };

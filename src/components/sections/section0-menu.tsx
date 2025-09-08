@@ -3,10 +3,11 @@ import StartButton  from "../start-button"
 import MenuTextBox from "../menuTextBox"
 import LocaleSwitcher from "../locale-switcher"
 
+
 export const MenuBackground = () => {
     return(
         <motion.div
-        className="h-full w-full grid grid-cols-3 grid-rows-4 bg-[#49a8df] overflow-hidden"
+        className="h-full w-full bg-[#49a8df] overflow-hidden"
         initial = {{opacity: 0}}
         animate = {{opacity: 1}}      
         exit = {{ opacity: 0 }}
