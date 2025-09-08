@@ -20,7 +20,7 @@ const LAGOONS = [
   {"lagoon":"Berre Lagoon","image":"public/assets/maps/LagunaBerre.jpg","state":"Texas","latitude":43.40083157,"longitude":5.1083329,"zoom":10},
 ]
 
-function ControlPanel(props: { onSelectLagoon: (arg0: { lagoon: string; image: string; state: string; latitude: number; longitude: number; }) => void; }) {
+function ControlPanel(props: { onSelectLagoon: (arg0: { lagoon: string; image: string; state: string; latitude: number; longitude: number; zoom:number}) => void; }) {
   return (
     <div className="control-panel">
       {LAGOONS.filter(lagoon => lagoon.state != 'Kazakistan').map((lagoon, index) => (
