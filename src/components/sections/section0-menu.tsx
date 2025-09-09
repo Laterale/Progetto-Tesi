@@ -2,6 +2,7 @@ import { motion } from "framer-motion"
 import StartButton  from "../start-button"
 import MenuTextBox from "../menuTextBox"
 import LocaleSwitcher from "../locale-switcher"
+  
 
 
 export const MenuBackground = () => {
@@ -18,8 +19,9 @@ export const MenuBackground = () => {
 }
 
 export const MenuContent = () =>{
+
     return(
-    <div className="h-full w-full grid grid-cols-3 grid-rows-4 font-hand pointer-events-auto">
+    <div className="h-full w-full grid grid-cols-3 grid-rows-4 font-hand pointer-events-auto p-4">
         <div className="col-span-3 flex justify-center items-center">
             <div>
                 <img
@@ -32,7 +34,7 @@ export const MenuContent = () =>{
                 </h1>
             </div>
         </div>
-        <div className="col-start-1 row-start-2 col-span-3 items-center">
+        <div className="col-start-1 row-start-2 col-span-3 items-start">
             <MenuTextBox className="p-5"/>    
         </div>
         <div className="row-start-4 col-start-1 col-span-3 flex justify-center items-center">

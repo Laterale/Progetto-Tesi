@@ -1,78 +1,116 @@
 import React, { FC, useState } from "react";
-import cn from "~/lib/cn";
 import { useDictionary } from "~/lib/i18n";
 import TextType from "./spokenText";
+import Stepper, { Step } from "./stepper";
 
-const MenuTextBox: FC<{ className?: string }> = ({ className }) => {
+const MenuTextBox: FC<{ className?: string }> = () => {
   const { menu: dictionary } = useDictionary();
   const page = [dictionary.p1, dictionary.p2, dictionary.p3, dictionary.p4];
-
-  const [currentPage, setCurrentPage] = useState(0);
   const [shownPages, setShownPages] = useState(new Set<number>())
 
-  const prevPage = () => {
-    setShownPages(prev => new Set(prev).add(currentPage))
-    if (currentPage > 0) setCurrentPage(currentPage - 1);
-
-  };
-
-  const nextPage = () => {
-    setShownPages(prev => new Set(prev).add(currentPage))
-    if (currentPage < page.length - 1) setCurrentPage(currentPage + 1);
-  };
-
-  const wasShown = shownPages.has(currentPage)
-
   return (
-    <div
-      className={cn(
-        "text-center",
-        className
-      )}
+    <>
+    <Stepper
+    initialStep={1}
+    onStepChange={(step) => {
+      setShownPages(prev => new Set(prev).add(step-1));
+    }}
+    onFinalStepCompleted={() => console.log("All steps completed!")}
+    backButtonText="<"
+    nextButtonText=">"
+    stepCircleContainerClassName="border-none"
+    disableStepIndicators
+    backButtonProps={{
+      className: "bg-transparent shadow-none hover:bg-transparent animate-bounce-slight"
+    }}
+    nextButtonProps={{
+      className: "bg-transparent shadow-none hover:bg-transparent animate-bounce-slight"
+    }}
     >
-      {wasShown ?(
-      <p className="text-lg tracking-wide break-words mb-4">
-        {page[currentPage] ?? ""}
-      </p>
-      ) : (
-      <TextType
-        key={currentPage}
-        className="text-lg tracking-wide break-words mb-4"
-        text={page[currentPage] ?? ""}
-        typingSpeed={50}
-        pauseDuration={1500}
-        showCursor={true}
-        cursorCharacter=""
-        textColors={["black"]}
-      />
-      )
-    }
-      <div className="flex justify-evenly items-end">
-
-        <button
-          onClick={prevPage}
-          disabled={currentPage === 0}
-          className="disabled:opacity-50 text-black animate-bounce-slight disabled:animate-none"
-        >
-          {"<"}
-        </button>
-
-        <span className="text-sm text-black pl-3 pr-3">
-          {currentPage + 1} / {page.length}
-        </span>
-
-        <button
-          onClick={nextPage}
-          disabled={currentPage === page.length - 1}
-          className="text-black disabled:opacity-50 animate-bounce-slight disabled:animate-none"
-        >
-          {">"}
-        </button>
-
-      </div>
-      
-    </div>
+      <Step>
+        <div className="text-center">
+          {/*shownPages.has(1)*/true ?(
+            <p className="text-lg tracking-wide break-words mb-4 text-balance">
+              {page[0] ?? ""}
+            </p>
+            ) : (
+            <TextType
+            className="text-lg tracking-wide break-words mb-4"
+            text={page[0] ?? ""}
+            typingSpeed={50}
+            pauseDuration={1500}
+            showCursor={true}
+            cursorCharacter=""
+            textColors={["black"]}
+            />
+            )
+          }
+        </div>
+      </Step>
+      <Step>
+        <div className="text-center">
+          {/*shownPages.has(2)*/true ?(
+            <p className="text-lg tracking-wide break-words mb-4 text-balance">
+              {page[1] ?? ""}
+            </p>
+            ) : (
+            <TextType
+            className="text-lg tracking-wide break-words mb-4"
+            text={page[1] ?? ""}
+            typingSpeed={50}
+            pauseDuration={1500}
+            showCursor={true}
+            cursorCharacter=""
+            textColors={["black"]}
+            />
+            )
+          }
+        </div>
+      </Step>
+      <Step>
+        <div className="text-center">
+          {/*shownPages.has(3)*/true ?(
+            <p className="text-lg tracking-wide break-words mb-4 text-balance">
+              {page[2] ?? ""}
+            </p>
+            ) : (
+            <TextType
+            className="text-lg tracking-wide break-words mb-4"
+            text={page[2] ?? ""}
+            typingSpeed={50}
+            pauseDuration={1500}
+            showCursor={true}
+            cursorCharacter=""
+            textColors={["black"]}
+            />
+            )
+          }
+        </div>
+      </Step>
+      <Step>
+        <div className="text-center">
+          {/*shownPages.has(4)*/true ?(
+            <p className="text-lg tracking-wide break-words mb-4 text-balance">
+              {page[3] ?? ""}
+            </p>
+            ) : (
+            <TextType
+            className="text-lg tracking-wide break-words mb-4"
+            text={page[3] ?? ""}
+            typingSpeed={50}
+            pauseDuration={1500}
+            showCursor={true}
+            cursorCharacter=""
+            textColors={["black"]}
+            />
+            )
+          }
+        </div>
+      </Step>
+    </Stepper>
+  </>
   );
 };
+
 
 export default MenuTextBox;

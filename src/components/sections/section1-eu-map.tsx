@@ -8,7 +8,7 @@ const MAPBOX_TOKEN = 'pk.eyJ1IjoibGF0ZXJhbGUiLCJhIjoiY21mOGc4a2FzMG96eDJqczY2bjZ
 const initialViewState = {
   latitude: 40.7666636,
   longitude: 8.83333,
-  zoom: 5,
+  zoom: 3,
   bearing: 0,
   pitch: 0
 };
@@ -17,16 +17,16 @@ const LAGOONS = [
   {"lagoon":"Mar Menor","image":"public/assets/maps/MarMenorSatellite.jpg","state":"New York","latitude":37.6666636,"longitude":-0.77333,"zoom":10},
   {"lagoon":"Venice Lagoon","image":"public/assets/maps/LagunaVenezia.jpg","state":"California","latitude":45.276667,"longitude":12.406667,"zoom":9},
   {"lagoon":"Szczecin Lagoon","image":"public/assets/maps/LagunaStettino.jpeg","state":"Illinois","latitude":53.758543,"longitude":14.262812,"zoom":8.5},
-  {"lagoon":"Berre Lagoon","image":"public/assets/maps/LagunaBerre.jpg","state":"Texas","latitude":43.40083157,"longitude":5.1083329,"zoom":10},
+  {"lagoon":"Berre Lagoon","image":"public/assets/maps/LagunaBerre.jpg","state":"Texas","latitude":43.40083157,"longitude":4.8083329,"zoom":10},
 ]
 
 function ControlPanel(props: { onSelectLagoon: (arg0: { lagoon: string; image: string; state: string; latitude: number; longitude: number; zoom:number}) => void; }) {
   return (
-    <div className="control-panel">
+    <div className="p-3 rounded-lg bg-white border-2 border-black">
       {LAGOONS.filter(lagoon => lagoon.state != 'Kazakistan').map((lagoon, index) => (
         <div key={`btn-${index}`} className="input">
           <input
-            type="radio"
+            type="button"
             name="city"
             id={`lagoon-${index}`}
             onClick={() => props.onSelectLagoon(lagoon)}
@@ -42,7 +42,7 @@ const BG = () => {
   const mapRef = useRef<MapRef | null>(null);
   const onSelectLagoon = useCallback(
     ({ longitude, latitude, zoom}: { longitude: number; latitude: number; zoom:number}) => {
-    mapRef.current?.flyTo({ center: [longitude, latitude], zoom: zoom, curve: 1.5, duration: 6000 });
+    mapRef.current?.flyTo({ center: [longitude, latitude], zoom: zoom,  duration: 10000 });
   },
   []
 );

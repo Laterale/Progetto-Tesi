@@ -3,9 +3,9 @@ import { MainDictionary } from "~/dictionaries/en"
 export default {
   menu: {
     p1: "Benvenuto su SketchLagoon!",
-    p2: "Il mio nome è Marco Pescic e ti guiderò nel viaggio dove esploreremo la bellezza e i problemi delle lagune.",
-    p3: "Gigiiii, Gigi perchè non l'hai detto! Gigi grande campione perchè non l'hai dettooo",
-    p4: "Basta con questi quii!",
+    p2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.",
+    p3: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.",
+    p4: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.",
   },  
   euMap: {
     title: "Sketchlagoon",
