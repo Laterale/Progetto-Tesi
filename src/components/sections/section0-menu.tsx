@@ -1,10 +1,9 @@
-import { motion } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 import StartButton  from "../start-button"
 import MenuTextBox from "../menuTextBox"
 import LocaleSwitcher from "../locale-switcher"
+import { useState } from "react"
   
-
-
 export const MenuBackground = () => {
     return(
         <motion.div
@@ -19,7 +18,7 @@ export const MenuBackground = () => {
 }
 
 export const MenuContent = () =>{
-
+    const [canStart, setCanStart] = useState(false);
     return(
     <div className="h-full w-full grid grid-cols-3 grid-rows-4 font-hand pointer-events-auto p-4">
         <div className="col-span-3 flex justify-center items-center">
@@ -35,11 +34,31 @@ export const MenuContent = () =>{
             </div>
         </div>
         <div className="col-start-1 row-start-2 col-span-3 items-start">
-            <MenuTextBox className="p-5"/>    
+            <MenuTextBox 
+            className="p-5"
+            onAllStepsCompleted={() => setCanStart(true)}
+            />    
         </div>
         <div className="row-start-4 col-start-1 col-span-3 flex justify-center items-center">
-            <StartButton className={"p-3"}/>
-        </div>
+        <AnimatePresence>
+          {canStart && (
+            <motion.div
+              key="start-button"
+              initial={{ y: 100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 100, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 50, damping: 10 }}
+            >
+              <StartButton
+                className="p-3"
+                onClick={() => {
+                  console.log("Start button action triggered!");
+                }}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
         <LocaleSwitcher className="absolute left-10 bottom-10"/>
     </div>
     )
