@@ -19,12 +19,6 @@ const MenuTextBox: FC<{ className?: string; onAllStepsCompleted?: () => void }> 
       nextButtonText=">"
       stepCircleContainerClassName="border-none"
       disableStepIndicators
-      backButtonProps={{
-        className: "bg-transparent shadow-none hover:bg-transparent animate-bounce-slight"
-      }}
-      nextButtonProps={{
-        className: "bg-transparent shadow-none hover:bg-transparent animate-bounce-slight"
-      }}
     >
       <Step>
         <div className="text-center">
@@ -109,6 +103,5 @@ const MenuTextBox: FC<{ className?: string; onAllStepsCompleted?: () => void }> 
     </Stepper>
   );
 };
-
 
 export default MenuTextBox;

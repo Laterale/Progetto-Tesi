@@ -132,8 +132,8 @@ export default function Stepper({
                   onClick={handleBack}
                   className={`duration-350 rounded px-2 py-1 transition ${
                     currentStep === 1
-                      ? 'pointer-events-none opacity-50 text-neutral-400'
-                      : 'text-neutral-400 hover:text-neutral-700'
+                      ? 'pointer-events-none opacity-50 text-black'
+                      :  'text-black'
                   }`}
                   {...backButtonProps}
                 >
@@ -142,10 +142,14 @@ export default function Stepper({
               )}
               <button
                 onClick={isLastStep ? handleComplete : handleNext}
-                className="duration-350 flex items-center justify-center rounded-full bg-green-500 py-1.5 px-3.5 font-medium tracking-tight text-white transition hover:bg-green-600 active:bg-green-700"
+                className={isLastStep ? 
+                  "duration-350 flex items-center justify-center rounded-full bg-[#94C11F] py-1.5 px-3.5 font-medium tracking-tight text-black transition animate-bounce"
+                  :
+                  "duration-350 flex items-center justify-center rounded-full bg-transparent py-1.5 px-3.5 font-medium tracking-tight text-black transition"
+                }
                 {...nextButtonProps}
               >
-                {isLastStep ? 'Letsgoski' : nextButtonText}
+                {isLastStep ? '>' : nextButtonText}
               </button>
             </div>
           </div>
@@ -176,7 +180,7 @@ function StepContentWrapper({
     <motion.div
       style={{ position: 'relative', overflow: 'hidden' }}
       animate={{ height: isCompleted ? 0 : parentHeight }}
-      transition={{ type: 'spring', duration: 0.4 }}
+      transition={{ type: 'spring', duration: 1 }}
       className={className}
     >
       <AnimatePresence initial={false} mode="sync" custom={direction}>
