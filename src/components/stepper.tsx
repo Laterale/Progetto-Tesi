@@ -1,5 +1,6 @@
 import React, { useState, Children, useRef, useLayoutEffect, HTMLAttributes, ReactNode } from 'react';
 import { motion, AnimatePresence, Variants } from 'motion/react';
+import { BoxGeometry } from 'three/src/Three.Core.js';
 
 interface StepperProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
@@ -76,12 +77,12 @@ export default function Stepper({
 
   return (
     <div
-      className="flex min-h-full flex-1 flex-col items-center justify-center p-4 sm:aspect-[4/3] md:aspect-[2/1]"
+      className="flex min-h-full flex-col sm:aspect-[4/3] md:aspect-[2/1]"
       {...rest}
     >
       <div
-        className={`mx-auto w-full max-w-md rounded-3xl shadow-xl ${stepCircleContainerClassName}`}
-        style={{ border: '2px solid #111' }}
+        className={`mx-auto w-full max-w-md rounded-3xl shadow-xl ${stepCircleContainerClassName} bg-white`}
+        style={{ border: '3px solid' }}
       >
         <div className={`${stepContainerClassName} flex w-full items-center p-6`}>
           {stepsArray.map((_, index) => {
@@ -125,8 +126,8 @@ export default function Stepper({
         </StepContentWrapper>
 
         {!isCompleted && (
-          <div className={`px-8 pb-8 ${footerClassName}`}>
-            <div className={`mt-5 flex ${currentStep !== 1 ? 'justify-between' : 'justify-end'}`}>
+          <div className={`px-8 pb-5 ${footerClassName}`}>
+            <div className={`flex ${currentStep !== 1 ? 'justify-between' : 'justify-end'}`}>
               {currentStep !== 1 && (
                 <button
                   onClick={handleBack}
@@ -273,9 +274,9 @@ function StepIndicator({ step, currentStep, onClickStep, disableStepIndicators =
     >
       <motion.div
         variants={{
-          inactive: { scale: 1, backgroundColor: '#111', color: '#a3a3a3' },
-          active: { scale: 1, backgroundColor: '#94C11F', color: '#5227FF' },
-          complete: { scale: 1, backgroundColor: '#94C11F', color: '#3b82f6' }
+          inactive: { scale: 0.7, backgroundColor: '#111'},
+          active: { scale: 1.3, backgroundColor: '#94C11F'},
+          complete: { scale: 1, backgroundColor: '#94C11F'}
         }}
         transition={{ duration: 0.3 }}
         className="flex h-5 w-5 items-center justify-center rounded-full font-semibold"
@@ -299,17 +300,17 @@ interface StepConnectorProps {
 function StepConnector({ isComplete }: StepConnectorProps) {
   const lineVariants: Variants = {
     incomplete: { width: 0, backgroundColor: 'transparent' },
-    complete: { width: '100%', height: 5, backgroundColor: '#FFFFFF' }
+    complete: { width: '100%', height: '100%', backgroundColor: '#94C11F' }
   };
 
   return (
-    <div className="relative  h-0.5 flex-1 overflow-hidden rounded bg-black">
+    <div className="relative h-1 flex-1">
       <motion.div
         className="absolute left-0 top-0 h-full"
         variants={lineVariants}
         initial={false}
         animate={isComplete ? 'complete' : 'incomplete'}
-        transition={{ duration: 0.4 }}
+        transition={{ duration: 0.6 }}
       />
     </div>
   );

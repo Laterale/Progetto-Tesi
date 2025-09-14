@@ -20,7 +20,7 @@ export const MenuBackground = () => {
 export const MenuContent = () =>{
     const [canStart, setCanStart] = useState(false);
     return(
-    <div className="h-full w-full grid grid-cols-3 grid-rows-4 font-hand pointer-events-auto p-4">
+    <div className="h-full w-full grid grid-cols-3 grid-rows-5 font-hand pointer-events-auto p-4">
         <div className="col-span-3 flex justify-center items-center">
             <div>
                 <img
@@ -33,13 +33,12 @@ export const MenuContent = () =>{
                 </h1>
             </div>
         </div>
-        <div className="col-start-1 row-start-2 col-span-3 items-start">
+        <div className="col-start-1 row-start-2 col-span-3 items-start pr-6 pl-6">
             <MenuTextBox 
-            className="p-5"
             onAllStepsCompleted={() => setCanStart(true)}
             />    
         </div>
-        <div className="row-start-4 col-start-1 col-span-3 flex justify-center items-center">
+        <div className="row-start-5 col-start-1 col-span-3 flex justify-center items-center">
         <AnimatePresence>
           {canStart && (
             <motion.div
