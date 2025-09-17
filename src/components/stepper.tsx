@@ -81,8 +81,8 @@ export default function Stepper({
       {...rest}
     >
       <div
-        className={`mx-auto w-full max-w-md rounded-3xl shadow-xl ${stepCircleContainerClassName} bg-white`}
-        style={{ border: '3px solid' }}
+        className={`mx-auto w-full max-w-md rounded-xl bg-white ${stepCircleContainerClassName}`}
+        style={{ border: '' }}
       >
         <div className={`${stepContainerClassName} flex w-full items-center p-6`}>
           {stepsArray.map((_, index) => {
@@ -131,11 +131,7 @@ export default function Stepper({
               {currentStep !== 1 && (
                 <button
                   onClick={handleBack}
-                  className={`duration-350 rounded px-2 py-1 transition ${
-                    currentStep === 1
-                      ? 'pointer-events-none opacity-50 text-black'
-                      :  'text-black'
-                  }`}
+                  className={"flex items-center justify-center rounded-full bg-transparent py-1.5 px-3.5 font-medium tracking-tight text-black transition"}
                   {...backButtonProps}
                 >
                   {backButtonText}

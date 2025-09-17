@@ -7,7 +7,7 @@ import { useState } from "react"
 export const MenuBackground = () => {
     return(
         <motion.div
-        className="h-full w-full bg-[#49a8df] overflow-hidden"
+        className="h-full w-full bg-[#46b1e2] overflow-hidden"
         initial = {{opacity: 0}}
         animate = {{opacity: 1}}      
         exit = {{ opacity: 0 }}
@@ -20,7 +20,7 @@ export const MenuBackground = () => {
 export const MenuContent = () =>{
     const [canStart, setCanStart] = useState(false);
     return(
-    <div className="h-full w-full grid grid-cols-3 grid-rows-5 font-hand pointer-events-auto p-4">
+    <div className="h-full w-full grid grid-cols-3 grid-rows-5 font-hand pointer-events-auto">
         <div className="col-span-3 flex justify-center items-center">
             <div>
                 <img
@@ -33,12 +33,13 @@ export const MenuContent = () =>{
                 </h1>
             </div>
         </div>
-        <div className="col-start-1 row-start-2 col-span-3 items-start pr-6 pl-6">
+        <div className="col-start-1 row-start-2 col-span-3 items-start pr-10 pl-10">
             <MenuTextBox 
             onAllStepsCompleted={() => setCanStart(true)}
             />    
         </div>
-        <div className="row-start-5 col-start-1 col-span-3 flex justify-center items-center">
+        <img src="/assets/MascotteFierce.png" alt="Mascotte Fierce" />
+        <div className="absolute-center-x bottom-20">
         <AnimatePresence>
           {canStart && (
             <motion.div
@@ -48,12 +49,7 @@ export const MenuContent = () =>{
               exit={{ y: 100, opacity: 0 }}
               transition={{ type: "spring", stiffness: 50, damping: 10 }}
             >
-              <StartButton
-                className="p-3"
-                onClick={() => {
-                  console.log("Start button action triggered!");
-                }}
-              />
+              <StartButton className="p-3"/>
             </motion.div>
           )}
         </AnimatePresence>
