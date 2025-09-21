@@ -40,7 +40,7 @@ const Main = () => {
   return (
     <>
       {/* <BreakpointDisplay /> */}
-      <div className="fixed inset-0 flex bg-sky-200 pointer-events-auto">
+      <div className="fixed inset-0 flex bg-[#46b1e2] pointer-events-auto">
         <AnimatePresence mode="wait">
           {div0InView && <MenuBackground key="div0-bg"/>}
           {div1InView && <EuMapBackground key="div1-bg" />}
