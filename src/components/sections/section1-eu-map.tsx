@@ -14,16 +14,15 @@ const initialViewState = {
 };
 
 const LAGOONS = [
-  { lagoon: "Mar Menor", image: "/assets/maps/MarMenorSatellite.jpg", latitude: 37.7066636, longitude: -0.77333, zoom: 10 },
-  { lagoon: "Venice Lagoon", image: "/assets/maps/LagunaVenezia.jpg", latitude: 45.276667, longitude: 12.406667, zoom: 8 },
-  { lagoon: "Szczecin Lagoon", image: "/assets/maps/LagunaStettino.jpeg", latitude: 53.758543, longitude: 14.262812, zoom: 8 },
-  { lagoon: "Berre Lagoon", image: "/assets/maps/LagunaBerre.jpg", latitude: 43.40083157, longitude: 4.7083329, zoom: 9 },
+  { lagoon: "Venice Lagoon", image: "/assets/maps/LagunaVenezia.jpg", latitude: 45.276667, longitude: 12.406667, zoom: 7 },
+  { lagoon: "Mar Menor", image: "/assets/maps/MarMenorSatellite.jpg", latitude: 37.7066636, longitude: -0.77333, zoom: 8 },
+  { lagoon: "Szczecin Lagoon", image: "/assets/maps/LagunaStettino.jpeg", latitude: 53.758543, longitude: 14.262812, zoom: 7 },
 ];
 
 export default function ControlPanel(props: { onSelectLagoon: (arg0: { lagoon: string; image: string; latitude: number; longitude: number; zoom:number}) => void; }) {
   return (
     <motion.div
-    className="p-1 bg-transparent flex gap-2 w-full"
+    className="pr-4 pl-4 bg-transparent flex gap-2 w-full"
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}
@@ -32,16 +31,11 @@ export default function ControlPanel(props: { onSelectLagoon: (arg0: { lagoon: s
         <motion.button
         key={lagoon.lagoon}
         onClick={() => props.onSelectLagoon(lagoon)}
-        className="group relative overflow-hidden rounded-md transition-all h-20 w-1/4"
+        className="group relative overflow-hidden transition-all h-12 w-1/3"
         whileTap={{ scale: 0.97 }}
         >
-          <img
-          src={lagoon.image}
-          alt={lagoon.lagoon}
-          className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 flex items-end p-2 bg-gradient-to-t from-black/60 to-transparent">
-          <p className="text-white text-xs">{lagoon.lagoon}</p>
+          <div className="absolute inset-0 flex items-center p-2 rounded-t-sm bg-gradient-to-t from-white to-yellow-400">
+          <p className="text-black text-center text-sm w-full">{lagoon.lagoon}</p>
           </div>
         </motion.button>
       ))}
@@ -76,31 +70,25 @@ export const EuMapContent = () => {
   []
 );
   return (
-  <div className="h-full w-full grid grid-rows-6 font-hand pointer-events-auto overflow-hidden">
+  <div className="h-full w-full grid grid-rows-6 font-hand pointer-events-auto overflow-hidden p-1">
     <div className="row-span-2">
-
-    </div>
-    <div className="row-start-3 flex items-end">
       <ControlPanel onSelectLagoon={onSelectLagoon}/>
     </div>
-    <div className="row-start-4 row-span-3 border-8 border-black/40 p-7 text-transparent bg-[url('/assets/bg.png')] bg-cover bg-center">
-    <div className="h-full w-full border-4 border-white">
+    <div className="absolute-center-x bottom-28 h-1/3 w-5/6 border-4 border-white rounded-full text-transparent overflow-hidden">
       <Map
-      ref={mapRef}
-      dragPan={true}
-      scrollZoom={true}
-      initialViewState={initialViewState}
-      mapStyle="mapbox://styles/mapbox/streets-v9"
-      mapboxAccessToken={MAPBOX_TOKEN}
-      dragRotate={false}
-      doubleClickZoom={false}
-      touchZoomRotate={false}
-      keyboard={false}
+        ref={mapRef}
+        dragPan={true}
+        scrollZoom={true}
+        initialViewState={initialViewState}
+        mapStyle="mapbox://styles/mapbox/streets-v9"
+        mapboxAccessToken={MAPBOX_TOKEN}
+        dragRotate={false}
+        doubleClickZoom={false}
+        touchZoomRotate={false}
+        keyboard={false}
       />
     </div>
-
-    </div>
-    <div className="absolute-center-x bottom-5">
+    <div className="absolute-center-x bottom-10">
       <PageSwitcher
       currentPageId={pageIds.eu}
       className="max-w-[250px] min-w-[120px]"
