@@ -36,6 +36,7 @@
     "nanoid": "^5.0.9",
     "negotiator": "^0.6.3",
     "next": "^14.2.3",
+    "ogl": "^1.0.11",
     "react": "^18",
     "react-bits": "^1.0.5",
     "react-dom": "^18",

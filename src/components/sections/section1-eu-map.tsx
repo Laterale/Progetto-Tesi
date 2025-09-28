@@ -46,7 +46,7 @@ export default function ControlPanel(props: { onSelectLagoon: (arg0: { lagoon: s
 export const EuMapBackground = () => {
   return (
     <motion.div
-    className="h-full w-full bg-[#46b1e2]"
+    className="h-full w-full bg-[#3A9BD9]"
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}

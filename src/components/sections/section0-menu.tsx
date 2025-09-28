@@ -3,16 +3,29 @@ import StartButton  from "../start-button"
 import MenuTextBox from "../menuTextBox"
 import LocaleSwitcher from "../locale-switcher"
 import { useState } from "react"
-  
+import Particles from '../bg';
+
+
+
 export const MenuBackground = () => {
     return(
         <motion.div
-        className="h-full w-full bg-[#46b1e2] overflow-hidden"
+        className="h-full w-full bg-[#3A9BD9] overflow-hidden"
         initial = {{opacity: 0}}
         animate = {{opacity: 1}}      
         exit = {{ opacity: 0 }}
         transition = {{ duration: 1.0 }}
         >
+          <Particles
+          particleColors={['#ffffff', '#0960c4']}
+          particleCount={200}
+          particleSpread={15}
+          speed={0.05}
+          particleBaseSize={200}
+          moveParticlesOnHover={true}
+          alphaParticles={false}
+          disableRotation={false}
+          />
         </motion.div>
     )
 }

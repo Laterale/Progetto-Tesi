@@ -81,7 +81,7 @@ export default function Stepper({
     >
       <div
         className={`mx-auto w-full max-w-md rounded-3xl bg-white/20 ${stepCircleContainerClassName}`}
-        style={{ border: '2px solid white' }}
+        style={{ border: '2px solid black' }}
       >
         <div className={`${stepContainerClassName} flex w-full items-center p-5`}>
           {stepsArray.map((_, index) => {
@@ -130,7 +130,7 @@ export default function Stepper({
               {currentStep !== 1 && (
                 <button
                   onClick={handleBack}
-                  className={"flex items-center justify-center rounded-full bg-transparent py-1.5 px-3.5 font-medium tracking-tight text-white transition"}
+                  className={"flex items-center justify-center rounded-full bg-transparent py-1.5 px-3.5 font-medium tracking-tight text-black transition"}
                   {...backButtonProps}
                 >
                   {backButtonText}
@@ -139,9 +139,9 @@ export default function Stepper({
               <button
                 onClick={isLastStep ? handleComplete : handleNext}
                 className={isLastStep ? 
-                  "duration-350 flex items-center justify-center rounded-full bg-[#96d100] py-1.5 px-3.5 font-medium text-white transition animate-bounce"
+                  "duration-350 flex items-center justify-center rounded-full bg-[#94C11F] py-1.5 px-3.5 font-medium text-black transition animate-bounce"
                   :
-                  "duration-350 flex items-center justify-center rounded-full bg-transparent py-1.5 px-3.5 font-medium text-white transition"
+                  "duration-350 flex items-center justify-center rounded-full bg-transparent py-1.5 px-3.5 font-medium text-black transition"
                 }
                 {...nextButtonProps}
               >
@@ -270,14 +270,14 @@ function StepIndicator({ step, currentStep, onClickStep, disableStepIndicators =
       <motion.div
         variants={{
           inactive: { scale: 0.3, backgroundColor: '#FFF'},
-          active: { scale: 1, backgroundColor: '#96d100'},
-          complete: { scale: 1, backgroundColor: '#96d100'}
+          active: { scale: 1, backgroundColor: '#94C11F'},
+          complete: { scale: 1, backgroundColor: '#94C11F '}
         }}
         transition={{ duration: 0.3 }}
         className="flex h-5 w-5 items-center justify-center rounded-full font-semibold"
       >
         {status === 'complete' ? (
-          <CheckIcon className="h-4 w-4 text-black" />
+          <CheckIcon className="h-4 w-4" />
         ) : status === 'active' ? (
           <div className="h-2 w-2 rounded-full bg-white" />
         ) : (
@@ -295,7 +295,7 @@ interface StepConnectorProps {
 function StepConnector({ isComplete }: StepConnectorProps) {
   const lineVariants: Variants = {
     incomplete: { width: 0, backgroundColor: 'transparent' },
-    complete: { width: '100%', height: '100%', backgroundColor: '#96d100' }
+    complete: { width: '100%', height: '100%', backgroundColor: 'white' }
   };
 
   return (
@@ -315,7 +315,7 @@ interface CheckIconProps extends React.SVGProps<SVGSVGElement> {}
 
 function CheckIcon(props: CheckIconProps) {
   return (
-    <svg {...props} fill="none" stroke="white" strokeWidth={2} viewBox="0 0 24 24">
+    <svg {...props} fill="none" stroke="white" strokeWidth={3} viewBox="0 0 24 24">
       <motion.path
         initial={{ pathLength: 0 }}
         animate={{ pathLength: 1 }}
