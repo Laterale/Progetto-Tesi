@@ -20,7 +20,7 @@ export const MenuBackground = () => {
 export const MenuContent = () =>{
     const [canStart, setCanStart] = useState(false);
     return(
-    <div className="h-full w-full grid grid-cols-3 grid-rows-5 font-hand pointer-events-auto">
+    <div className="h-full w-full grid grid-cols-3 grid-rows-6 font-hand pointer-events-auto">
         <div className="col-span-3 flex justify-center items-center">
             <div>
                 <img
@@ -38,7 +38,6 @@ export const MenuContent = () =>{
             onAllStepsCompleted={() => setCanStart(true)}
             />    
         </div>
-        <img src="/assets/MascotteFierce.png" alt="Mascotte Fierce" />
         <div className="absolute-center-x bottom-20">
         <AnimatePresence>
           {canStart && (

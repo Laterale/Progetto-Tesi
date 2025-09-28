@@ -17,7 +17,7 @@ const MenuTextBox: FC<{ className?: string; onAllStepsCompleted?: () => void }> 
       onFinalStepCompleted={onAllStepsCompleted}
       backButtonText="<"
       nextButtonText=">"
-      stepCircleContainerClassName="border-none"
+      stepCircleContainerClassName=""
       disableStepIndicators
     >
       <Step>

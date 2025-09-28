@@ -1,6 +1,5 @@
 import React, { useState, Children, useRef, useLayoutEffect, HTMLAttributes, ReactNode } from 'react';
 import { motion, AnimatePresence, Variants } from 'motion/react';
-import { BoxGeometry } from 'three/src/Three.Core.js';
 
 interface StepperProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
@@ -81,10 +80,10 @@ export default function Stepper({
       {...rest}
     >
       <div
-        className={`mx-auto w-full max-w-md rounded-xl bg-white ${stepCircleContainerClassName}`}
-        style={{ border: '' }}
+        className={`mx-auto w-full max-w-md rounded-3xl bg-white/20 ${stepCircleContainerClassName}`}
+        style={{ border: '2px solid white' }}
       >
-        <div className={`${stepContainerClassName} flex w-full items-center p-6`}>
+        <div className={`${stepContainerClassName} flex w-full items-center p-5`}>
           {stepsArray.map((_, index) => {
             const stepNumber = index + 1;
             const isNotLastStep = index < totalSteps - 1;
@@ -126,12 +125,12 @@ export default function Stepper({
         </StepContentWrapper>
 
         {!isCompleted && (
-          <div className={`px-8 pb-5 ${footerClassName}`}>
+          <div className={`px-5 pb-3 ${footerClassName}`}>
             <div className={`flex ${currentStep !== 1 ? 'justify-between' : 'justify-end'}`}>
               {currentStep !== 1 && (
                 <button
                   onClick={handleBack}
-                  className={"flex items-center justify-center rounded-full bg-transparent py-1.5 px-3.5 font-medium tracking-tight text-black transition"}
+                  className={"flex items-center justify-center rounded-full bg-transparent py-1.5 px-3.5 font-medium tracking-tight text-white transition"}
                   {...backButtonProps}
                 >
                   {backButtonText}
@@ -140,13 +139,13 @@ export default function Stepper({
               <button
                 onClick={isLastStep ? handleComplete : handleNext}
                 className={isLastStep ? 
-                  "duration-350 flex items-center justify-center rounded-full bg-[#94C11F] py-1.5 px-3.5 font-medium tracking-tight text-black transition animate-bounce"
+                  "duration-350 flex items-center justify-center rounded-full bg-[#96d100] py-1.5 px-3.5 font-medium text-white transition animate-bounce"
                   :
-                  "duration-350 flex items-center justify-center rounded-full bg-transparent py-1.5 px-3.5 font-medium tracking-tight text-black transition"
+                  "duration-350 flex items-center justify-center rounded-full bg-transparent py-1.5 px-3.5 font-medium text-white transition"
                 }
                 {...nextButtonProps}
               >
-                {isLastStep ? '>' : nextButtonText}
+                {">"}
               </button>
             </div>
           </div>
@@ -270,9 +269,9 @@ function StepIndicator({ step, currentStep, onClickStep, disableStepIndicators =
     >
       <motion.div
         variants={{
-          inactive: { scale: 0.7, backgroundColor: '#111'},
-          active: { scale: 1.3, backgroundColor: '#94C11F'},
-          complete: { scale: 1, backgroundColor: '#94C11F'}
+          inactive: { scale: 0.3, backgroundColor: '#FFF'},
+          active: { scale: 1, backgroundColor: '#96d100'},
+          complete: { scale: 1, backgroundColor: '#96d100'}
         }}
         transition={{ duration: 0.3 }}
         className="flex h-5 w-5 items-center justify-center rounded-full font-semibold"
@@ -296,11 +295,11 @@ interface StepConnectorProps {
 function StepConnector({ isComplete }: StepConnectorProps) {
   const lineVariants: Variants = {
     incomplete: { width: 0, backgroundColor: 'transparent' },
-    complete: { width: '100%', height: '100%', backgroundColor: '#94C11F' }
+    complete: { width: '100%', height: '100%', backgroundColor: '#96d100' }
   };
 
   return (
-    <div className="relative h-1 flex-1">
+    <div className="relative h-0.5 flex-1">
       <motion.div
         className="absolute left-0 top-0 h-full"
         variants={lineVariants}
