@@ -71,10 +71,8 @@ export const EuMapContent = () => {
 );
   return (
   <div className="h-full w-full grid grid-rows-6 font-hand pointer-events-auto overflow-hidden p-1">
-    <div className="row-span-2">
-      <ControlPanel onSelectLagoon={onSelectLagoon}/>
-    </div>
-    <div className="absolute-center-x bottom-28 h-1/3 w-5/6 border-4 border-white rounded-full text-transparent overflow-hidden">
+    <div className="row-span-3 text-transparent p-10 pb-20">
+      <div className="h-full w-full rounded-full border-4 border-yellow-200 overflow-hidden">
       <Map
         ref={mapRef}
         dragPan={true}
@@ -86,7 +84,9 @@ export const EuMapContent = () => {
         doubleClickZoom={false}
         touchZoomRotate={false}
         keyboard={false}
+        style={{ width:'100%', height:'100%'}}
       />
+      </div>
     </div>
     <div className="absolute-center-x bottom-10">
       <PageSwitcher
