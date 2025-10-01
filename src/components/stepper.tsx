@@ -1,5 +1,7 @@
 import React, { useState, Children, useRef, useLayoutEffect, HTMLAttributes, ReactNode } from 'react';
 import { motion, AnimatePresence, Variants } from 'motion/react';
+import { space } from 'postcss/lib/list';
+import { is } from 'drizzle-orm';
 
 interface StepperProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
@@ -71,7 +73,7 @@ export default function Stepper({
 
   const handleComplete = () => {
     setDirection(1);
-    updateStep(totalSteps + 1);
+    updateStep(currentStep + 1)
   };
 
   return (
@@ -84,72 +86,70 @@ export default function Stepper({
         style={{ border: '2px solid black' }}
       >
         <div className={`${stepContainerClassName} flex w-full items-center p-5`}>
-          {stepsArray.map((_, index) => {
-            const stepNumber = index + 1;
-            const isNotLastStep = index < totalSteps - 1;
-            return (
-              <React.Fragment key={stepNumber}>
-                {renderStepIndicator ? (
-                  renderStepIndicator({
-                    step: stepNumber,
-                    currentStep,
-                    onStepClick: clicked => {
-                      setDirection(clicked > currentStep ? 1 : -1);
-                      updateStep(clicked);
-                    }
-                  })
-                ) : (
-                  <StepIndicator
-                    step={stepNumber}
-                    disableStepIndicators={disableStepIndicators}
-                    currentStep={currentStep}
-                    onClickStep={clicked => {
-                      setDirection(clicked > currentStep ? 1 : -1);
-                      updateStep(clicked);
-                    }}
-                  />
-                )}
-                {isNotLastStep && <StepConnector isComplete={currentStep > stepNumber} />}
-              </React.Fragment>
-            );
-          })}
-        </div>
-
-        <StepContentWrapper
-          isCompleted={isCompleted}
-          currentStep={currentStep}
-          direction={direction}
-          className={`space-y-2 px-8 ${contentClassName}`}
-        >
-          {stepsArray[currentStep - 1]}
-        </StepContentWrapper>
-
-        {!isCompleted && (
+            {stepsArray.map((_, index) => {
+              const stepNumber = index + 1;
+              const isNotLastStep = index < totalSteps - 1;
+              return (
+                <React.Fragment key={stepNumber}>
+                  {renderStepIndicator ? (
+                    renderStepIndicator({
+                      step: stepNumber,
+                      currentStep,
+                      onStepClick: clicked => {
+                        setDirection(clicked > currentStep ? 1 : -1);
+                        updateStep(clicked);
+                      }
+                    })
+                  ) : (
+                    <StepIndicator
+                      step={stepNumber}
+                      disableStepIndicators={disableStepIndicators}
+                      currentStep={currentStep}
+                      onClickStep={clicked => {
+                        setDirection(clicked > currentStep ? 1 : -1);
+                        updateStep(clicked);
+                      } } />
+                  )}
+                  {isNotLastStep && <StepConnector isComplete={currentStep > stepNumber} />}
+                </React.Fragment>
+              );
+            })}
+          </div>
+          <StepContentWrapper
+            isCompleted={isCompleted}
+            currentStep={currentStep}
+            direction={direction}
+            className={`space-y-2 px-8 ${contentClassName}`}
+          >
+            {stepsArray[currentStep - 1]}
+          </StepContentWrapper>
           <div className={`px-5 pb-3 ${footerClassName}`}>
-            <div className={`flex ${currentStep !== 1 ? 'justify-between' : 'justify-end'}`}>
+            {!isCompleted ? 
+            <div className={`flex ${currentStep !== 1 ? 'justify-between' : 'justify-end'}`}> 
               {currentStep !== 1 && (
                 <button
-                  onClick={handleBack}
-                  className={"flex items-center justify-center rounded-full bg-transparent py-1.5 px-3.5 font-medium tracking-tight text-black transition"}
-                  {...backButtonProps}
+                onClick={handleBack}
+                className={"flex items-center justify-center rounded-full bg-transparent py-1.5 px-3.5 font-medium tracking-tight text-black transition"}
+                {...backButtonProps}
                 >
                   {backButtonText}
                 </button>
               )}
               <button
-                onClick={isLastStep ? handleComplete : handleNext}
-                className={isLastStep ? 
-                  "duration-350 flex items-center justify-center rounded-full bg-[#94C11F] py-1.5 px-3.5 font-medium text-black transition animate-bounce"
-                  :
-                  "duration-350 flex items-center justify-center rounded-full bg-transparent py-1.5 px-3.5 font-medium text-black transition"
-                }
-                {...nextButtonProps}
+              onClick={isLastStep ? handleComplete : handleNext}
+              className={isLastStep ?
+                "duration-350 flex items-center justify-center rounded-full bg-[#94C11F] py-1.5 px-3.5 font-medium text-black transition animate-bounce"
+                :
+                "duration-350 flex items-center justify-center rounded-full bg-transparent py-1.5 px-3.5 font-medium text-black transition"}
+              {...nextButtonProps}
               >
                 {">"}
               </button>
             </div>
+            :
+            <span></span>
+            }
           </div>
-        )}
       </div>
     </div>
   );
@@ -175,16 +175,22 @@ function StepContentWrapper({
   return (
     <motion.div
       style={{ position: 'relative', overflow: 'hidden' }}
-      animate={{ height: isCompleted ? 0 : parentHeight }}
+      animate={{ height: parentHeight }}
       transition={{ type: 'spring', duration: 1 }}
       className={className}
     >
       <AnimatePresence initial={false} mode="sync" custom={direction}>
-        {!isCompleted && (
-          <SlideTransition key={currentStep} direction={direction} onHeightReady={h => setParentHeight(h)}>
-            {children}
-          </SlideTransition>
-        )}
+        {isCompleted ?        
+        <SlideTransition key={currentStep} direction={direction} onHeightReady={h => setParentHeight(h)}>
+          <div className="flex justify-center items-center pb-5">
+            <img className="size-20" src="/assets/icon.png" alt=""/>
+          </div>
+        </SlideTransition>
+        :
+        <SlideTransition key={currentStep} direction={direction} onHeightReady={h => setParentHeight(h)}>
+          {children}
+        </SlideTransition>
+        }
       </AnimatePresence>
     </motion.div>
   );
@@ -252,7 +258,7 @@ interface StepIndicatorProps {
 }
 
 function StepIndicator({ step, currentStep, onClickStep, disableStepIndicators = false }: StepIndicatorProps) {
-  const status = currentStep === step ? 'active' : currentStep < step ? 'inactive' : 'complete';
+  const status = currentStep === step ? 'active' : currentStep < step ? 'inactive' : 'complete'
 
   const handleClick = () => {
     if (step !== currentStep && !disableStepIndicators) {
