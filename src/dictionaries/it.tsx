@@ -8,7 +8,7 @@ export default {
     p4: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.",
   },  
   euMap: {
-    title: "Sketchlagoon",
+    title: "LE LAGUNE COSTIERE",
     description: (
       <>
         Le lagune di acqua salata sono importanti dimore costiere per tutti i tipi di vita marina.

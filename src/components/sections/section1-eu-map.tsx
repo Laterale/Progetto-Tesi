@@ -1,8 +1,9 @@
 import { motion } from "framer-motion"
 import PageSwitcher, { pageIds } from "~/components/page-switcher"
 import { useDictionary } from "~/lib/i18n"
-import {useRef, useCallback} from 'react';
+import {useRef, useCallback, useEffect} from 'react';
 import Map, {MapRef, Marker} from 'react-map-gl/mapbox';
+import { MapTextBox } from "../textboxes";
 
 const MAPBOX_TOKEN = 'pk.eyJ1IjoibGF0ZXJhbGUiLCJhIjoiY21mOGc4a2FzMG96eDJqczY2bjZ2ZWJ3NiJ9.edTo59w8IaMW2MhiESU7gw';
 const initialViewState = {
@@ -13,11 +14,13 @@ const initialViewState = {
   pitch: 0
 };
 
+
 const LAGOONS = [
-  { lagoon: "Venice Lagoon", image: "/assets/maps/LagunaVenezia.jpg", latitude: 45.276667, longitude: 12.406667, zoom: 7 },
-  { lagoon: "Mar Menor", image: "/assets/maps/MarMenorSatellite.jpg", latitude: 37.7066636, longitude: -0.77333, zoom: 8 },
-  { lagoon: "Szczecin Lagoon", image: "/assets/maps/LagunaStettino.jpeg", latitude: 53.758543, longitude: 14.262812, zoom: 7 },
+  { lagoon: "Venice Lagoon", image: "/assets/maps/LagunaVenezia.jpg", latitude: 45.376667, longitude: 12.406667, zoom: 8 },
+  { lagoon: "Mar Menor", image: "/assets/maps/MarMenorSatellite.jpg", latitude: 37.7066636, longitude: -0.77333, zoom: 9 },
+  { lagoon: "Szczecin Lagoon", image: "/assets/maps/LagunaStettino.jpeg", latitude: 53.858543, longitude: 14.262812, zoom: 7 },
 ];
+
 
 export default function ControlPanel(props: { onSelectLagoon: (arg0: { lagoon: string; image: string; latitude: number; longitude: number; zoom:number}) => void; }) {
   return (
@@ -43,36 +46,65 @@ export default function ControlPanel(props: { onSelectLagoon: (arg0: { lagoon: s
   );
 }
 
-export const EuMapBackground = () => {
-  return (
-    <motion.div
-    className="h-full w-full bg-[#3A9BD9]"
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
-    transition={{ duration: 0.7 }}
-    >
-    </motion.div>
-  )
-}
-
 export const EuMapContent = () => {
-  const { euMap: dictionary } = useDictionary()
+  const { euMap: dictionary } = useDictionary();
   const mapRef = useRef<MapRef | null>(null);
+
+  // ref per controllare l'animazione
+  const animationFrame = useRef<number | null>(null);
+  const stopped = useRef(false); 
+
+  useEffect(() => {
+    const speed = 0.1;
+
+    const animate = () => {
+      if (stopped.current) return; //se fermato, esci
+      const map = mapRef.current?.getMap();
+      if (map) {
+        const center = map.getCenter();
+        map.setCenter([center.lng + speed, center.lat]); //solo in orizzontale
+      }
+      animationFrame.current = requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    return () => {
+      if (animationFrame.current) cancelAnimationFrame(animationFrame.current);
+    };
+  }, []);
+
+  // quando seleziono una laguna ferma lo scroll automatico
   const onSelectLagoon = useCallback(
-  ({ longitude, latitude, zoom }: { longitude: number; latitude: number; zoom:number }) => {
-    mapRef.current?.getMap().flyTo({
-      center: [longitude, latitude],
-      zoom,
-      duration: 10000
-    });
-  },
-  []
-);
+    ({ longitude, latitude, zoom }: { longitude: number; latitude: number; zoom:number }) => {
+      // blocca per sempre l’animazione
+      stopped.current = true;
+      if (animationFrame.current) {
+        cancelAnimationFrame(animationFrame.current);
+      }
+      mapRef.current?.getMap().flyTo({
+        center: [longitude, latitude],
+        zoom,
+        duration: 8000
+      });
+    },
+    []
+  );
   return (
-  <div className="h-full w-full grid grid-rows-6 font-hand pointer-events-auto overflow-hidden p-1">
-    <div className="row-span-3 text-transparent p-10 pb-20">
-      <div className="h-full w-full rounded-full border-4 border-yellow-200 overflow-hidden">
+  <div className="h-full w-full grid grid-cols-4 grid-rows-7 font-hand pointer-events-auto pr-5 pl-5">
+    <div className="col-span-4 flex justify-center items-center">
+      <h1 className="text-[clamp(1.5rem,7vw,3rem)] text-center tracking-wide break-words leading-snug animate-bounce-slight">
+        {dictionary.title}
+      </h1>
+    </div>
+    <div className="col-span-4">
+      <MapTextBox/>    
+    </div>
+    <div className="col-span-4">
+      <ControlPanel onSelectLagoon={onSelectLagoon}></ControlPanel>
+    </div>
+    <div className="absolute-center-x bottom-20 text-transparent flex items-center justify-center p-5 z-10">
+      <div className="aspect-square w-[300px] rounded-full border-4 border-[#584313] overflow-hidden -translate-y-10">
       <Map
         ref={mapRef}
         dragPan={true}
@@ -88,12 +120,17 @@ export const EuMapContent = () => {
       />
       </div>
     </div>
-    <div className="absolute-center-x bottom-10">
+    <div className="absolute-center-x bottom-10 z-20">
       <PageSwitcher
       currentPageId={pageIds.eu}
-      className="max-w-[250px] min-w-[120px]"
+      className="max-w-[200px] min-w-[120px] "
       />
     </div>
+    <img 
+    src="/assets/piedistallo.png" 
+    alt="" 
+    className="absolute-center-x bottom-0 size-[160px] z-0" 
+    />
   </div>
   )
 }

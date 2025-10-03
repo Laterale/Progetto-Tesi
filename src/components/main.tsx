@@ -1,17 +1,16 @@
 "use client"
-
-import { AnimatePresence, useInView } from "framer-motion"
 import { useEffect, useRef } from "react"
 import { pageIds } from "~/components/page-switcher"
 // import BreakpointDisplay from "~/components/breakpoint-display"
-import { EuMapBackground, EuMapContent } from "~/components/sections/section1-eu-map"
-import { LagoonMapBackground, LagoonMapContent } from "~/components/sections/section2-lagoon-map"
-import { DrawingsBackground, DrawingsContent } from "~/components/sections/section3-drawings"
-import { ChatBackground, ChatContent } from "~/components/sections/section4-chat"
+import { MenuContent } from "./sections/section0-menu"
+import { EuMapContent } from "~/components/sections/section1-eu-map"
+import { LagoonMapContent } from "~/components/sections/section2-lagoon-map"
+import { DrawingsContent } from "~/components/sections/section3-drawings"
+import { ChatContent } from "~/components/sections/section4-chat"
 import { EndingContent } from "~/components/sections/section5-ending"
 import env from "~/lib/env"
-import { useScrollDirection } from "~/lib/scroll-direction"
-import { MenuBackground, MenuContent } from "./sections/section0-menu"
+
+import Particles from "./bg"
 
 const Main = () => {
   const container = useRef<HTMLDivElement>(null)
@@ -22,15 +21,6 @@ const Main = () => {
   const div4 = useRef<HTMLDivElement>(null)
   const div5 = useRef<HTMLDivElement>(null)
 
-  const div0InView = useInView(div0, { amount: 0.5 })
-  const div1InView = useInView(div1, { amount: 0.5 })
-  const div2InView = useInView(div2, { amount: 0.5 })
-  const div3InView = useInView(div3, { amount: 0.5 })
-  const div4InView = useInView(div4, { amount: 0.5 })
-  // const div5InView = useInView(div5, { amount: 0.5 })
-
-  const scrollDirection = useScrollDirection(container)
-
   useEffect(() => {
     const blockScroll = (e: Event) => e.preventDefault()
     container.current?.addEventListener("wheel", blockScroll)
@@ -40,14 +30,17 @@ const Main = () => {
   return (
     <>
       {/* <BreakpointDisplay /> */}
-      <div className="fixed inset-0 flex bg-[#3A9BD9] pointer-events-auto">
-        <AnimatePresence mode="wait">
-          {div0InView && <MenuBackground key="div0-bg"/>}
-          {div1InView && <EuMapBackground key="div1-bg" />}
-          {div2InView && <LagoonMapBackground key="div2-bg" animation={scrollDirection == "down" ? "zoom-in" : "zoom-out"}/>}
-          {div3InView && <DrawingsBackground key="div3-bg" />}
-          {div4InView && <ChatBackground key="div4-bg" />}
-        </AnimatePresence>
+      <div className="fixed inset-0 flex bg-[#2282bf] pointer-events-auto">
+        <Particles
+        particleColors={['#ffffff', '#0960c4']}
+        particleCount={200}
+        particleSpread={15}
+        speed={0.05}
+        particleBaseSize={200}
+        moveParticlesOnHover={true}
+        alphaParticles={false}
+        disableRotation={false}
+        />
       </div>
       <div
         ref={container}

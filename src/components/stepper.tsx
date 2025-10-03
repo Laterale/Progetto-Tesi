@@ -123,8 +123,7 @@ export default function Stepper({
           >
             {stepsArray[currentStep - 1]}
           </StepContentWrapper>
-          <div className={`px-5 pb-3 ${footerClassName}`}>
-            {!isCompleted ? 
+          <div className={`px-5 pb-3 ${footerClassName}`}> 
             <div className={`flex ${currentStep !== 1 ? 'justify-between' : 'justify-end'}`}> 
               {currentStep !== 1 && (
                 <button
@@ -135,6 +134,7 @@ export default function Stepper({
                   {backButtonText}
                 </button>
               )}
+              {!isCompleted ?
               <button
               onClick={isLastStep ? handleComplete : handleNext}
               className={isLastStep ?
@@ -145,10 +145,10 @@ export default function Stepper({
               >
                 {">"}
               </button>
+              :
+              <span></span>
+              }  
             </div>
-            :
-            <span></span>
-            }
           </div>
       </div>
     </div>
@@ -182,7 +182,7 @@ function StepContentWrapper({
       <AnimatePresence initial={false} mode="sync" custom={direction}>
         {isCompleted ?        
         <SlideTransition key={currentStep} direction={direction} onHeightReady={h => setParentHeight(h)}>
-          <div className="flex justify-center items-center pb-5">
+          <div className="flex justify-center items-center">
             <img className="size-20" src="/assets/icon.png" alt=""/>
           </div>
         </SlideTransition>

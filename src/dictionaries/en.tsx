@@ -7,7 +7,7 @@ const en = {
     p4: "page 4",
   },  
   euMap: {
-    title: "Sketchlagoon",
+    title: "SALTWATER LAGOONS",
     description: (
       <>
         Saltwater lagoons are important coastal homes for all kinds of sea life. They protect the
