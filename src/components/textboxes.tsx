@@ -106,7 +106,7 @@ export const MenuTextBox: FC<{ className?: string; onAllStepsCompleted?: () => v
 
 export const MapTextBox: FC<{ className?: string; onAllStepsCompleted?: () => void; updateMap?: (step: number) => void}> = ({ onAllStepsCompleted, updateMap}) => {
   const { euMap: dictionary } = useDictionary();
-  const page = [dictionary.p1, dictionary.p2, dictionary.p3, dictionary.p4];
+  const page = [dictionary.p0, dictionary.p1, dictionary.p2, dictionary.p3, dictionary.p4];
   const [shownPages, setShownPages] = useState(new Set<number>());
 
   return (
@@ -194,6 +194,26 @@ export const MapTextBox: FC<{ className?: string; onAllStepsCompleted?: () => vo
             <TextType
             className="tracking-wide break-words mb-2"
             text={page[3] ?? ""}
+            typingSpeed={50}
+            pauseDuration={1500}
+            showCursor={true}
+            cursorCharacter=""
+            textColors={["black"]}
+            />
+            )
+          }
+        </div>
+      </Step>
+            <Step>
+        <div className="text-sm">
+          {/*shownPages.has(4)*/true ?(
+            <p className="tracking-wide break-words mb-2">
+              {page[4] ?? ""}
+            </p>
+            ) : (
+            <TextType
+            className="tracking-wide break-words mb-2"
+            text={page[4] ?? ""}
             typingSpeed={50}
             pauseDuration={1500}
             showCursor={true}

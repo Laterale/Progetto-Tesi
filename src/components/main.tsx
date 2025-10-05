@@ -55,24 +55,24 @@ const Main = () => {
         </section>        
         <section
           ref={div1}
-          id={pageIds.eu}
-          className="h-screen snap-center pointer-events-none relative"
-        >
-          <EuMapContent />
-        </section>
-        <section
-          ref={div2}
           id={pageIds.lagoon}
           className="h-screen snap-center pointer-events-none relative"
         >
           <LagoonMapContent />
         </section>
         <section
-          ref={div3}
+          ref={div2}
           id={pageIds.drawings}
           className="h-screen snap-center pointer-events-none relative"
         >
           <DrawingsContent />
+        </section>
+        <section
+          ref={div3}
+          id={pageIds.eu}
+          className="h-screen snap-center pointer-events-none relative"
+        >
+          <EuMapContent />
         </section>
         {!env.NEXT_PUBLIC_DISABLE_CHATBOT_PAGE && (
           <section

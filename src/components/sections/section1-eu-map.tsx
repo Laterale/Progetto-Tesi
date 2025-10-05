@@ -17,9 +17,10 @@ const initialViewState = {
 
 const LAGOONS = [
   { lagoon: "Earth", image: "", latitude: 43.6666636, longitude: 5.77333, zoom: 0 },
-  { lagoon: "Venice Lagoon", image: "/assets/maps/LagunaVenezia.jpg", latitude: 45.376667, longitude: 12.406667, zoom: 8 },
-  { lagoon: "Mar Menor", image: "/assets/maps/MarMenorSatellite.jpg", latitude: 37.7066636, longitude: -0.77333, zoom: 9 },
+  { lagoon: "Mar Menor", image: "/assets/maps/MarMenorSatellite.jpg", latitude: 37.7066636, longitude: -0.77333, zoom: 8 },
+  { lagoon: "Venice Lagoon", image: "/assets/maps/LagunaVenezia.jpg", latitude: 45.376667, longitude: 12.406667, zoom: 7 },
   { lagoon: "Szczecin Lagoon", image: "/assets/maps/LagunaStettino.jpeg", latitude: 53.858543, longitude: 14.262812, zoom: 7 },
+  { lagoon: "Earth", image: "", latitude: 43.6666636, longitude: 5.77333, zoom: 0 }
 ];
 
 
@@ -96,7 +97,7 @@ export const EuMapContent = () => {
     []
   );
   return (
-  <div className="h-full w-full grid grid-cols-4 grid-rows-7 font-hand pointer-events-auto pr-5 pl-5">
+  <div className="h-full w-full grid grid-cols-4 grid-rows-8 font-hand pointer-events-auto pr-5 pl-5">
     <div className="col-span-4 flex justify-center items-center">
       <h1 className="text-[clamp(1.5rem,7vw,3rem)] text-center tracking-wide break-words leading-snug animate-bounce-slight">
         {dictionary.title}
@@ -106,7 +107,7 @@ export const EuMapContent = () => {
       <MapTextBox updateMap={handleMapStepChange}/>    
     </div>
     <div className="absolute-center-x bottom-20 text-transparent flex items-center justify-center p-5 z-10">
-      <div className="aspect-square w-[250px] rounded-full border-4 border-[#584313] overflow-hidden -translate-y-10">
+      <div className="aspect-square w-[270px] rounded-full border-4 border-[#674717] overflow-hidden -translate-y-10">
       <Map
         ref={mapRef}
         dragPan={false}

@@ -5,18 +5,18 @@ import { useDictionary } from "~/lib/i18n"
 
 export const pageIds = {
   menu: "menu",
-  eu: "eu-map",
   lagoon: "lagoon-map",
   drawings: "drawings",
   chat: "chat",
+  eu: "eu-map",
   questionnaire: "ending",
 }
 
 const enabledPageIds = [
   pageIds.menu,
-  pageIds.eu,
   pageIds.lagoon,
   pageIds.drawings,
+  pageIds.eu,
   env.NEXT_PUBLIC_DISABLE_CHATBOT_PAGE ? false : pageIds.chat,
   env.NEXT_PUBLIC_DISABLE_QUESTIONNAIRE_PAGE ? false : pageIds.questionnaire,
 ].filter(Boolean) as string[]

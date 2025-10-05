@@ -9,10 +9,11 @@ export default {
   },  
   euMap: {
     title: "LE LAGUNE COSTIERE",
-    p1: "Le lagune di acqua salata sono importanti dimore costiere per tutti i tipi di vita marina. Proteggono la riva, forniscono un posto sicuro per i pesci e rappresentano un luogo di riposo per molti uccelli, rendendoli essenziali per la biodiversità.",
-    p2: "Proteggono la riva, forniscono un posto sicuro per i pesci e rappresentano un luogo di riposo per molti uccelli, rendendoli essenziali per la biodiversità.",
-    p3: "Questi luoghi speciali sono fondamentali per l'equilibrio della natura, ma possono essere facilmente danneggiati dall'inquinamento, dai cambiamenti climatici o dalle attività umane.",
-    p4: "Ecco perché dobbiamo prenderci cura di loro per mantenere il nostro pianeta sano.",
+    p0: "Le lagune di acqua salata sono importanti dimore costiere per tutti i tipi di vita marina. Proteggono la riva, forniscono un posto sicuro per i pesci e rappresentano un luogo di riposo per molti uccelli, rendendoli essenziali per la biodiversità.",
+    p1: "Un tempo gioiello del Mediterraneo, oggi il Mar Menor è simbolo della crisi ambientale costiera, ma non è un caso isolato. In Europa, altre lagune affrontano sfide simili: pressioni turistiche, inquinamento agricolo e cambiamenti climatici stanno mettendo a rischio ecosistemi delicati e preziosi.",
+    p2: "Nel cuore del Mediterraneo, una laguna antica quanto la città che la abita deve fare i conti con la modernità. Tra turismo di massa, navigazione e innalzamento del mare, anche qui la natura fatica a respirare. La sua storia millenaria ci ricorda che la bellezza, senza equilibrio ecologico, rischia di diventare solo memoria.",
+    p3: "Più a nord, un’altra laguna racconta una storia diversa ma affine. Qui l’inquinamento proveniente dai fiumi e l’attività industriale hanno alterato profondamente l’ecosistema. Le acque, condivise da due Paesi, mostrano come la cooperazione internazionale sia fondamentale per la rinascita di ambienti così complessi.",
+    p4: "Ogni laguna è diversa, ma tutte raccontano la stessa urgenza: proteggere ciò che resta e ripensare il nostro rapporto con l’acqua. Solo comprendendo queste connessioni possiamo sperare in un futuro in cui il Mar Menor — e tutte le sue sorelle — tornino a vivere.",
   },
   lagoonMap: {
     title: "La laguna del Mar Menor",

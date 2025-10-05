@@ -17,7 +17,7 @@ const StartButton: FC<StartButtonProps> = ({className}) => {
     >
       <button
         className={cn("items-center", className)}
-        onClick={() =>document.getElementById(pageIds.eu ?? "")?.scrollIntoView({ behavior: "smooth" })}
+        onClick={() =>document.getElementById(pageIds.lagoon ?? "")?.scrollIntoView({ behavior: "smooth" })}
       >
         <span>START</span>
       </button>

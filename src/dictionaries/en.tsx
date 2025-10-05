@@ -8,6 +8,7 @@ const en = {
   },  
   euMap: {
     title: "SALTWATER LAGOONS",
+    p0: "",
     p1: "Benvenuto su SketchLagoon!",
     p2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.",
     p3: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.",
