@@ -2,24 +2,17 @@ import { MainDictionary } from "~/dictionaries/en"
 
 export default {
   menu: {
-    p1: "page 1",
-    p2: "page 2",
-    p3: "page 3",
-    p4: "page 4",
+    p1: "Benvenuto su SketchLagoon!",
+    p2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.",
+    p3: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.",
+    p4: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.",
   },    
   euMap: {
     title: "Sketchlagoon",
-    description: (
-      <>
-        Las lagunas de agua salada son importantes hogares costeros para todo tipo de vida marina.
-        Protegen la costa, proporcionan un lugar seguro para los peces y son un lugar de descanso
-        para muchas aves, lo que las hace esenciales para la <mark>biodiversidad</mark>. Estos
-        lugares especiales son clave para el equilibrio de la naturaleza, pero pueden dañarse
-        fácilmente por la contaminación, el cambio climático o la actividad humana. Por eso
-        necesitamos
-        <mark>cuidarlas</mark> para mantener nuestro planeta saludable.
-      </>
-    ),
+    p1: "Benvenuto su SketchLagoon!",
+    p2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.",
+    p3: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.",
+    p4: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.",
   },
   lagoonMap: {
     title: "La laguna del Mar Menor",

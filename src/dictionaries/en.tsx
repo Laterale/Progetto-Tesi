@@ -1,22 +1,17 @@
 import { GenericDictionary } from "~/lib/i18n/config"
 const en = {
   menu: {
-    p1: "page 1",
-    p2: "page 2",
-    p3: "page 3",
-    p4: "page 4",
+    p1: "Benvenuto su SketchLagoon!",
+    p2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.",
+    p3: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.",
+    p4: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.",
   },  
   euMap: {
     title: "SALTWATER LAGOONS",
-    description: (
-      <>
-        Saltwater lagoons are important coastal homes for all kinds of sea life. They protect the
-        shore, provide a safe place for fish, and are a resting spot for many birds, making them
-        essential for <mark>biodiversity</mark>. These special places are key for nature's balance,
-        but they can easily be harmed by pollution, climate change, or human activity. That's why we
-        need to <mark>take care</mark> of them to keep our planet healthy.
-      </>
-    ),
+    p1: "Benvenuto su SketchLagoon!",
+    p2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.",
+    p3: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.",
+    p4: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.",
   },
   lagoonMap: {
     title: "The Mar Menor Lagoon",

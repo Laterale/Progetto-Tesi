@@ -16,6 +16,7 @@ const initialViewState = {
 
 
 const LAGOONS = [
+  { lagoon: "Earth", image: "", latitude: 43.6666636, longitude: 5.77333, zoom: 0 },
   { lagoon: "Venice Lagoon", image: "/assets/maps/LagunaVenezia.jpg", latitude: 45.376667, longitude: 12.406667, zoom: 8 },
   { lagoon: "Mar Menor", image: "/assets/maps/MarMenorSatellite.jpg", latitude: 37.7066636, longitude: -0.77333, zoom: 9 },
   { lagoon: "Szczecin Lagoon", image: "/assets/maps/LagunaStettino.jpeg", latitude: 53.858543, longitude: 14.262812, zoom: 7 },
@@ -50,10 +51,16 @@ export const EuMapContent = () => {
   const { euMap: dictionary } = useDictionary();
   const mapRef = useRef<MapRef | null>(null);
 
-  // ref per controllare l'animazione
+  const handleMapStepChange = (step: number) => {
+    const lagoon = LAGOONS[step - 1];
+    // gli step partono da 1 nel tuo Stepper, quindi -1 per l’indice
+    if (lagoon) {
+      onSelectLagoon(lagoon);
+    }
+  };
+
   const animationFrame = useRef<number | null>(null);
   const stopped = useRef(false); 
-
   useEffect(() => {
     const speed = 0.1;
 
@@ -66,9 +73,7 @@ export const EuMapContent = () => {
       }
       animationFrame.current = requestAnimationFrame(animate);
     };
-
     animate();
-
     return () => {
       if (animationFrame.current) cancelAnimationFrame(animationFrame.current);
     };
@@ -85,7 +90,7 @@ export const EuMapContent = () => {
       mapRef.current?.getMap().flyTo({
         center: [longitude, latitude],
         zoom,
-        duration: 8000
+        duration: 10000
       });
     },
     []
@@ -98,17 +103,14 @@ export const EuMapContent = () => {
       </h1>
     </div>
     <div className="col-span-4">
-      <MapTextBox/>    
-    </div>
-    <div className="col-span-4">
-      <ControlPanel onSelectLagoon={onSelectLagoon}></ControlPanel>
+      <MapTextBox updateMap={handleMapStepChange}/>    
     </div>
     <div className="absolute-center-x bottom-20 text-transparent flex items-center justify-center p-5 z-10">
-      <div className="aspect-square w-[300px] rounded-full border-4 border-[#584313] overflow-hidden -translate-y-10">
+      <div className="aspect-square w-[250px] rounded-full border-4 border-[#584313] overflow-hidden -translate-y-10">
       <Map
         ref={mapRef}
-        dragPan={true}
-        scrollZoom={true}
+        dragPan={false}
+        scrollZoom={false}
         initialViewState={initialViewState}
         mapStyle="mapbox://styles/mapbox/streets-v9"
         mapboxAccessToken={MAPBOX_TOKEN}

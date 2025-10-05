@@ -9,17 +9,10 @@ export default {
   },  
   euMap: {
     title: "LE LAGUNE COSTIERE",
-    description: (
-      <>
-        Le lagune di acqua salata sono importanti dimore costiere per tutti i tipi di vita marina.
-        Proteggono la riva, forniscono un posto sicuro per i pesci e rappresentano un luogo di
-        riposo per molti uccelli, rendendoli essenziali per la <mark>biodiversità</mark>. Questi
-        luoghi speciali sono fondamentali per l'equilibrio della natura, ma possono essere
-        facilmente danneggiati dall'inquinamento, dai cambiamenti climatici o dalle attività umane.
-        Ecco perché dobbiamo <mark>prenderci cura</mark> di loro per mantenere il nostro pianeta
-        sano.
-      </>
-    ),
+    p1: "Le lagune di acqua salata sono importanti dimore costiere per tutti i tipi di vita marina. Proteggono la riva, forniscono un posto sicuro per i pesci e rappresentano un luogo di riposo per molti uccelli, rendendoli essenziali per la biodiversità.",
+    p2: "Proteggono la riva, forniscono un posto sicuro per i pesci e rappresentano un luogo di riposo per molti uccelli, rendendoli essenziali per la biodiversità.",
+    p3: "Questi luoghi speciali sono fondamentali per l'equilibrio della natura, ma possono essere facilmente danneggiati dall'inquinamento, dai cambiamenti climatici o dalle attività umane.",
+    p4: "Ecco perché dobbiamo prenderci cura di loro per mantenere il nostro pianeta sano.",
   },
   lagoonMap: {
     title: "La laguna del Mar Menor",
