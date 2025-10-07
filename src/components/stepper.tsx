@@ -1,11 +1,10 @@
 import React, { useState, Children, useRef, useLayoutEffect, HTMLAttributes, ReactNode } from 'react';
 import { motion, AnimatePresence, Variants } from 'motion/react';
-import { space } from 'postcss/lib/list';
-import { is } from 'drizzle-orm';
 
 interface StepperProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
   initialStep?: number;
+  circlesColor?: string;
   onStepChange?: (step: number) => void;
   onFinalStepCompleted?: () => void;
   stepCircleContainerClassName?: string;
@@ -37,6 +36,7 @@ export default function Stepper({
   nextButtonProps = {},
   backButtonText = 'Back',
   nextButtonText = 'Continue',
+  circlesColor = '#94C11F',
   disableStepIndicators = false,
   renderStepIndicator,
   ...rest
@@ -82,7 +82,7 @@ export default function Stepper({
       {...rest}
     >
       <div
-        className={`mx-auto w-full max-w-md rounded-3xl bg-white/20 ${stepCircleContainerClassName}`}
+        className={`mx-auto w-full max-w-md rounded-3xl ${stepCircleContainerClassName}`}
         style={{ border: '2px solid black' }}
       >
         <div className={`${stepContainerClassName} flex w-full items-center p-5`}>
@@ -103,6 +103,7 @@ export default function Stepper({
                   ) : (
                     <StepIndicator
                       step={stepNumber}
+                      circlesColor={circlesColor}
                       disableStepIndicators={disableStepIndicators}
                       currentStep={currentStep}
                       onClickStep={clicked => {
@@ -137,11 +138,8 @@ export default function Stepper({
               {!isCompleted ?
               <button
               onClick={isLastStep ? handleComplete : handleNext}
-              className={isLastStep ?
-                "duration-350 flex items-center justify-center rounded-full bg-[#94C11F] py-1.5 px-3.5 font-medium text-black transition animate-bounce"
-                :
-                "duration-350 flex items-center justify-center rounded-full bg-transparent py-1.5 px-3.5 font-medium text-black transition"}
-              {...nextButtonProps}
+              className={`duration-350 flex items-center justify-center rounded-full py-1.5 px-3.5 font-medium text-black transition ${isLastStep ? 'animate-bounce' : ''}`}
+              style={{backgroundColor: isLastStep ? circlesColor : 'transparent',}}
               >
                 {">"}
               </button>
@@ -253,11 +251,12 @@ export function Step({ children }: StepProps) {
 interface StepIndicatorProps {
   step: number;
   currentStep: number;
+  circlesColor: string;
   onClickStep: (clicked: number) => void;
   disableStepIndicators?: boolean;
 }
 
-function StepIndicator({ step, currentStep, onClickStep, disableStepIndicators = false }: StepIndicatorProps) {
+function StepIndicator({ step, currentStep, circlesColor, onClickStep, disableStepIndicators = false }: StepIndicatorProps) {
   const status = currentStep === step ? 'active' : currentStep < step ? 'inactive' : 'complete'
 
   const handleClick = () => {
@@ -276,8 +275,8 @@ function StepIndicator({ step, currentStep, onClickStep, disableStepIndicators =
       <motion.div
         variants={{
           inactive: { scale: 0.3, backgroundColor: '#FFF'},
-          active: { scale: 1, backgroundColor: '#94C11F'},
-          complete: { scale: 1, backgroundColor: '#94C11F '}
+          active: { scale: 1, backgroundColor: circlesColor},
+          complete: { scale: 1, backgroundColor: circlesColor}
         }}
         transition={{ duration: 0.3 }}
         className="flex h-5 w-5 items-center justify-center rounded-full font-semibold"

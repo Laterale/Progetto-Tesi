@@ -9,24 +9,17 @@ const en = {
   euMap: {
     title: "SALTWATER LAGOONS",
     p0: "",
-    p1: "Benvenuto su SketchLagoon!",
-    p2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.",
-    p3: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.",
-    p4: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.",
+    p1: "",
+    p2: "",
+    p3: "",
+    p4: "",
   },
   lagoonMap: {
-    title: "The Mar Menor Lagoon",
-    description: (
-      <>
-        The Mar Menor lagoon in Spain is the largest saltwater lagoon in Europe, famous for its
-        clear waters and the many animal species that live there. It's also an important place for
-        fishing and tourism. But the <mark>fragile balance</mark> of the Mar Menor faces major
-        challenges, such as climate change and pollution caused by agriculture and cities.{" "}
-        <mark>SMARTLAGOON</mark> is a project that uses advanced technologies to help scientists
-        understand the environmental problems the lagoon is facing. The project also aims to raise
-        awareness among people so that they take action to protect this delicate ecosystem.
-      </>
-    ),
+    title: "THE MAR MENOR",
+    p0: "The Mar Menor lagoon in Spain is the largest saltwater lagoon in Europe, famous for its clear waters and the many animal species that live there. It's also an important place for fishing and tourism.",
+    p1: "It's also an important place for fishing and tourism.",
+    p2: "But the fragile balance of the Mar Menor faces major challenges, such as climate change and pollution caused by agriculture and cities.",
+    p3: "SMARTLAGOON is a project that uses advanced technologies to help scientists understand the environmental problems the lagoon is facing. The project also aims to raise awareness among people so that they take action to protect this delicate ecosystem.",
   },
   drawings: {
     title: "The Mar Menor through the eyes of children",

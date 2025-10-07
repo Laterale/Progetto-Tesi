@@ -51,7 +51,6 @@ export default function ControlPanel(props: { onSelectLagoon: (arg0: { lagoon: s
 export const EuMapContent = () => {
   const { euMap: dictionary } = useDictionary();
   const mapRef = useRef<MapRef | null>(null);
-
   const handleMapStepChange = (step: number) => {
     const lagoon = LAGOONS[step - 1];
     // gli step partono da 1 nel tuo Stepper, quindi -1 per l’indice
@@ -126,7 +125,7 @@ export const EuMapContent = () => {
     <div className="absolute-center-x bottom-10 z-20">
       <PageSwitcher
       currentPageId={pageIds.eu}
-      className="max-w-[200px] min-w-[120px] "
+      className="max-w-[200px] min-w-[120px]"
       />
     </div>
     <img 

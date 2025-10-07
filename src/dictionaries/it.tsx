@@ -16,19 +16,11 @@ export default {
     p4: "Ogni laguna è diversa, ma tutte raccontano la stessa urgenza: proteggere ciò che resta e ripensare il nostro rapporto con l’acqua. Solo comprendendo queste connessioni possiamo sperare in un futuro in cui il Mar Menor — e tutte le sue sorelle — tornino a vivere.",
   },
   lagoonMap: {
-    title: "La laguna del Mar Menor",
-    description: (
-      <>
-        La laguna del Mar Menor in Spagna è la più grande laguna di acqua salata d'Europa, famosa
-        per le sue acque limpide e le tante specie di animali che vi abitano. È un luogo importante
-        per la pesca e il turismo. Ma il <mark>fragile equilibrio</mark> del Mar Menor si trova ad
-        affrontare grandi sfide, come il cambiamento climatico e l'inquinamento provocato
-        dall'agricoltura e dalle città. <mark>SMARTLAGOON</mark> è un progetto che utilizza
-        tecnologie avanzate per aiutare gli scienziati a comprendere i problemi ambientali che la
-        laguna sta affrontando. Il progetto mira anche a sensibilizzare le persone in modo che
-        agiscano per proteggere questo delicato ecosistema.
-      </>
-    ),
+    title: "IL MAR MENOR",
+    p0: "La laguna del Mar Menor in Spagna è la più grande laguna di acqua salata d'Europa, famosa per le sue acque limpide e le tante specie di animali che vi abitano.",
+    p1: "È un luogo importante per la pesca e il turismo.",
+    p2: "Ma il fragile equilibrio del Mar Menor si trova ad affrontare grandi sfide, come il cambiamento climatico e l'inquinamento provocato dall'agricoltura e dalle città.",
+    p3: "SMARTLAGOON è un progetto che utilizza tecnologie avanzate per aiutare gli scienziati a comprendere i problemi ambientali che la laguna sta affrontando. Il progetto mira anche a sensibilizzare le persone in modo che agiscano per proteggere questo delicato ecosistema.",
   },
   drawings: {
     title: "Il Mar Menor attraverso lo sguardo dei bambini",

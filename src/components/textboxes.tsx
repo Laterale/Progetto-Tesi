@@ -17,7 +17,7 @@ export const MenuTextBox: FC<{ className?: string; onAllStepsCompleted?: () => v
       onFinalStepCompleted={onAllStepsCompleted}
       backButtonText="<"
       nextButtonText=">"
-      stepCircleContainerClassName=""
+      stepCircleContainerClassName="bg-white/20 "
       disableStepIndicators
     >
       <Step>
@@ -121,7 +121,7 @@ export const MapTextBox: FC<{ className?: string; onAllStepsCompleted?: () => vo
       onFinalStepCompleted={onAllStepsCompleted}
       backButtonText="<"
       nextButtonText=">"
-      stepCircleContainerClassName=""
+      stepCircleContainerClassName="bg-white/20 "
       disableStepIndicators
     >
       <Step>
@@ -214,6 +214,111 @@ export const MapTextBox: FC<{ className?: string; onAllStepsCompleted?: () => vo
             <TextType
             className="tracking-wide break-words mb-2"
             text={page[4] ?? ""}
+            typingSpeed={50}
+            pauseDuration={1500}
+            showCursor={true}
+            cursorCharacter=""
+            textColors={["black"]}
+            />
+            )
+          }
+        </div>
+      </Step>
+    </Stepper>
+  );
+};
+
+export const LagoonTextBox: FC<{ className?: string; onAllStepsCompleted?: () => void; updateStep?: (step: number) => void}> = ({ onAllStepsCompleted, updateStep}) => {
+  const { lagoonMap: dictionary } = useDictionary();
+  const page = [dictionary.p0, dictionary.p1, dictionary.p2, dictionary.p3];
+  const [shownPages, setShownPages] = useState(new Set<number>());
+
+  return (
+    <Stepper
+      initialStep={1}
+      onStepChange={(step) => {
+        if (updateStep) {
+          updateStep(step);
+        }
+        setShownPages(prev => new Set(prev).add(step - 1));
+      }}
+      onFinalStepCompleted={onAllStepsCompleted}
+      backButtonText="<"
+      nextButtonText=">"
+      stepCircleContainerClassName="bg-[#1071e7]/30"
+      circlesColor="#1071e7"
+      disableStepIndicators
+    >
+      <Step>
+        <div className="text-md">
+          {/*shownPages.has(1)*/true ?(
+            <p className=" tracking-wide break-words mb-2 text-left ">
+              {page[0] ?? ""}
+            </p>
+            ) : (
+            <TextType
+            className="tracking-wide break-words mb-2"
+            text={page[0] ?? ""}
+            typingSpeed={50}
+            pauseDuration={1500}
+            showCursor={true}
+            cursorCharacter=""
+            textColors={["black"]}
+            />
+            )
+          }
+        </div>
+      </Step>
+      <Step>
+        <div className="text-md">
+          {/*shownPages.has(2)*/true ?(
+            <p className="tracking-wide break-words mb-2">
+              {page[1] ?? ""}
+            </p>
+            ) : (
+            <TextType
+            className="tracking-wide break-words mb-2"
+            text={page[1] ?? ""}
+            typingSpeed={50}
+            pauseDuration={1500}
+            showCursor={true}
+            cursorCharacter=""
+            textColors={["black"]}
+            />
+            )
+          }
+        </div>
+      </Step>
+      <Step>
+        <div className="text-md">
+          {/*shownPages.has(3)*/true ?(
+            <p className="tracking-wide break-words mb-2">
+              {page[2] ?? ""}
+            </p>
+            ) : (
+            <TextType
+            className="tracking-wide break-words mb-2"
+            text={page[2] ?? ""}
+            typingSpeed={50}
+            pauseDuration={1500}
+            showCursor={true}
+            cursorCharacter=""
+            textColors={["black"]}
+            />
+            )
+          }
+        </div>
+      </Step>
+      <Step>
+        <div className="text-md">
+          {/*shownPages.has(4)*/true ?(
+            <p className="tracking-wide break-words mb-2">
+              {page[3] ?? ""}
+            </p>
+            ) : (
+            <TextType
+            className="tracking-wide break-words mb-2"
+            text={page[3] ?? ""}
             typingSpeed={50}
             pauseDuration={1500}
             showCursor={true}
