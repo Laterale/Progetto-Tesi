@@ -7,23 +7,15 @@ export default {
     p3: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.",
     p4: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.",
   },  
-  euMap: {
-    title: "LE LAGUNE COSTIERE",
-    p0: "Le lagune di acqua salata sono importanti dimore costiere per tutti i tipi di vita marina. Proteggono la riva, forniscono un posto sicuro per i pesci e rappresentano un luogo di riposo per molti uccelli, rendendoli essenziali per la biodiversità.",
-    p1: "Un tempo gioiello del Mediterraneo, oggi il Mar Menor è simbolo della crisi ambientale costiera, ma non è un caso isolato. In Europa, altre lagune affrontano sfide simili: pressioni turistiche, inquinamento agricolo e cambiamenti climatici stanno mettendo a rischio ecosistemi delicati e preziosi.",
-    p2: "Nel cuore del Mediterraneo, una laguna antica quanto la città che la abita deve fare i conti con la modernità. Tra turismo di massa, navigazione e innalzamento del mare, anche qui la natura fatica a respirare. La sua storia millenaria ci ricorda che la bellezza, senza equilibrio ecologico, rischia di diventare solo memoria.",
-    p3: "Più a nord, un’altra laguna racconta una storia diversa ma affine. Qui l’inquinamento proveniente dai fiumi e l’attività industriale hanno alterato profondamente l’ecosistema. Le acque, condivise da due Paesi, mostrano come la cooperazione internazionale sia fondamentale per la rinascita di ambienti così complessi.",
-    p4: "Ogni laguna è diversa, ma tutte raccontano la stessa urgenza: proteggere ciò che resta e ripensare il nostro rapporto con l’acqua. Solo comprendendo queste connessioni possiamo sperare in un futuro in cui il Mar Menor — e tutte le sue sorelle — tornino a vivere.",
-  },
   lagoonMap: {
     title: "IL MAR MENOR",
-    p0: "La laguna del Mar Menor in Spagna è la più grande laguna di acqua salata d'Europa, famosa per le sue acque limpide e le tante specie di animali che vi abitano.",
-    p1: "È un luogo importante per la pesca e il turismo.",
-    p2: "Ma il fragile equilibrio del Mar Menor si trova ad affrontare grandi sfide, come il cambiamento climatico e l'inquinamento provocato dall'agricoltura e dalle città.",
-    p3: "SMARTLAGOON è un progetto che utilizza tecnologie avanzate per aiutare gli scienziati a comprendere i problemi ambientali che la laguna sta affrontando. Il progetto mira anche a sensibilizzare le persone in modo che agiscano per proteggere questo delicato ecosistema.",
+    p0: "La laguna del Mar Menor in Spagna è la più grande laguna di acqua salata d'Europa, famosa per le sue acque limpide e le tante specie di animali che vi abitano, oltre ad essere un luogo importante per la pesca e il turismo.",
+    p1: "Ma il fragile equilibrio del Mar Menor si trova ad affrontare grandi sfide, come il cambiamento climatico e l'inquinamento provocato dall'agricoltura e dalle città.",
+    p2: "SMARTLAGOON è un progetto che utilizza tecnologie avanzate per aiutare gli scienziati a comprendere i problemi ambientali che la laguna sta affrontando.",
+    p3: "Il progetto mira anche a sensibilizzare le persone in modo che agiscano per proteggere questo delicato ecosistema.",
   },
   drawings: {
-    title: "Il Mar Menor attraverso lo sguardo dei bambini",
+    title: "ATTRAVERSO LO SGUARDO DEI BAMBINI",
     description: (
       <>
         <p>
@@ -32,13 +24,7 @@ export default {
         </p>
       </>
     ),
-    mascotte_dialogue:{
-      description:(
-        <>
-        <p>Clicca su un disegno per scoprire di piu!</p>
-        </>
-      )
-    },
+    hint: "Clicca su un disegno per scoprire di piu!",
     fish: {
       title: "Pesce",
       description: (
@@ -142,6 +128,14 @@ export default {
         </>
       ),
     },
+  },
+  euMap: {
+    title: "IN CONCLUSIONE...",
+    p0: "Le lagune di acqua salata sono importanti dimore costiere per tutti i tipi di vita marina. Proteggono la riva, forniscono un posto sicuro per i pesci e rappresentano un luogo di riposo per molti uccelli, rendendoli essenziali per la biodiversità.",
+    p1: "Un tempo gioiello del Mediterraneo, oggi il Mar Menor è simbolo della crisi ambientale costiera, ma non è un caso isolato. In Europa, altre lagune affrontano sfide simili: pressioni turistiche, inquinamento agricolo e cambiamenti climatici stanno mettendo a rischio ecosistemi delicati e preziosi.",
+    p2: "Nel cuore del Mediterraneo, una laguna antica quanto la città che la abita deve fare i conti con la modernità. Tra turismo di massa, navigazione e innalzamento del mare, anche qui la natura fatica a respirare. La sua storia millenaria ci ricorda che la bellezza, senza equilibrio ecologico, rischia di diventare solo memoria.",
+    p3: "Più a nord, un’altra laguna racconta una storia diversa ma affine. Qui l’inquinamento proveniente dai fiumi e l’attività industriale hanno alterato profondamente l’ecosistema. Le acque, condivise da due Paesi, mostrano come la cooperazione internazionale sia fondamentale per la rinascita di ambienti così complessi.",
+    p4: "Ogni laguna è diversa, ma tutte raccontano la stessa urgenza: proteggere ciò che resta e ripensare il nostro rapporto con l’acqua. Solo comprendendo queste connessioni possiamo sperare in un futuro in cui il Mar Menor — e tutte le sue sorelle — tornino a vivere.",
   },
   chat: {
     title: "Chat",

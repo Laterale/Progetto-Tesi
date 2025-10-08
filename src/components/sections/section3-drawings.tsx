@@ -8,24 +8,6 @@ import cn from "~/lib/cn"
 import data from "~/lib/data"
 import { useDictionary } from "~/lib/i18n"
 
-export const DrawingsBackground = () => {
-  return (
-    <motion.div
-      className="h-full w-full bg-sky-200 overflow-hidden pointer-events-none"
-      initial={{ opacity: 0, translateY: 100 }}
-      animate={{ opacity: 1, translateY: 0 }}
-      exit={{ opacity: 0, translateY: 100 }}
-      transition={{ duration: 0.7 }}
-    >
-      <img 
-      src="/assets/background.svg" 
-      alt="Sea" 
-      className="h-full w-full object-cover" 
-      />
-    </motion.div>
-  )
-}
-
 export const DrawingsContent = () => {
   const { drawings: dictionary } = useDictionary()
 
@@ -44,20 +26,16 @@ export const DrawingsContent = () => {
   }
 
   return (
-    <div className="h-full w-full overflow-hidden relative pointer-events-auto font-hand p-5 grid grid-rows-5 grid-cols-2 items-center">
-      <h1 className="text-[clamp(1.8rem,3vw,4rem)] tracking-wide text-balance lg:text-left text-center col-span-2 lg:col-span-1">
+    <div className="h-full w-full overflow-hidden pointer-events-auto font-hand p-5 bg-[url('/assets/drawings-bg.png')] bg-cover">
+      <h1 className="text-[clamp(1.5rem,6vw,3rem)] text-center tracking-wide break-words leading-snug animate-bounce-slight">
         {dictionary.title}
       </h1>
-      <div className="text-base lg:text-2xl tracking-wide text-balance lg:text-left text-center row-start-2 lg:col-span-1 col-span-2 mt-20">
+      <div className="text-base tracking-wide text-balance lg:text-left text-center row-start-2 lg:col-span-1 col-span-2 mt-20">
         {dictionary.description}
       </div>
-      <div className="hidden text-lg lg:text-2xl tracking-wide text-balance text-center">
-        {dictionary.mascotte_dialogue.description}
-      </div>
-      <PageSwitcher
-        currentPageId={pageIds.drawings}
-        className="font-hand absolute-center-x bottom-14 z-10"
-      />
+      <p className="text-lg tracking-wide text-balance text-center">
+        {dictionary.hint}
+      </p>
       <div className="grid grid-cols-12 grid-rows-12 absolute inset-0">
         {data.map((record) => (
           <Popover
@@ -120,6 +98,10 @@ export const DrawingsContent = () => {
         onOpenChange={({ open }) =>
           open ? openCarousel(carouselState.drawings, null) : closeCarousel()
         }
+      />
+      <PageSwitcher
+        currentPageId={pageIds.drawings}
+        className="font-hand absolute-center-x bottom-14 z-10"
       />
   </div>
   )

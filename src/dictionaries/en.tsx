@@ -6,23 +6,15 @@ const en = {
     p3: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.",
     p4: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.",
   },  
-  euMap: {
-    title: "SALTWATER LAGOONS",
-    p0: "",
-    p1: "",
-    p2: "",
-    p3: "",
-    p4: "",
-  },
   lagoonMap: {
     title: "THE MAR MENOR",
     p0: "The Mar Menor lagoon in Spain is the largest saltwater lagoon in Europe, famous for its clear waters and the many animal species that live there. It's also an important place for fishing and tourism.",
-    p1: "It's also an important place for fishing and tourism.",
-    p2: "But the fragile balance of the Mar Menor faces major challenges, such as climate change and pollution caused by agriculture and cities.",
-    p3: "SMARTLAGOON is a project that uses advanced technologies to help scientists understand the environmental problems the lagoon is facing. The project also aims to raise awareness among people so that they take action to protect this delicate ecosystem.",
+    p1: "But the fragile balance of the Mar Menor faces major challenges, such as climate change and pollution caused by agriculture and cities.",
+    p2: "The project also aims to raise awareness among people so that they take action to protect this delicate ecosystem.",
+    p3: "SMARTLAGOON is a project that uses advanced technologies to help scientists understand the environmental problems the lagoon is facing.",
   },
   drawings: {
-    title: "The Mar Menor through the eyes of children",
+    title: "THROUGH THE EYES OF CHILDREN",
     description: (
       <>
         <p>
@@ -31,13 +23,7 @@ const en = {
         </p>
       </>
     ),
-    mascotte_dialogue:{
-      description:(
-        <>
-        <p>Click on a drawing to find out more!</p>
-        </>
-      )
-    },
+    hint: "Click on a drawing to see more!",
     fish: {
       title: "Fish",
       description: (
@@ -136,6 +122,14 @@ const en = {
         </>
       ),
     },
+  },
+  euMap: {
+    title: "IN CONCLUSION...",
+    p0: "",
+    p1: "",
+    p2: "",
+    p3: "",
+    p4: "",
   },
   chat: {
     title: "Chat",
