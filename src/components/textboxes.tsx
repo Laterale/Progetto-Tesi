@@ -17,7 +17,10 @@ export const MenuTextBox: FC<{ className?: string; onAllStepsCompleted?: () => v
         }
         setShownPages(prev => new Set(prev).add(step - 1));
       }}
-      onFinalStepCompleted={onAllStepsCompleted}
+      onFinalStepCompleted={() => {
+        setShownPages(prev => new Set(prev).add(page.length));
+        if (onAllStepsCompleted) onAllStepsCompleted();
+      }}
       backButtonText="<"
       nextButtonText=">"
       stepCircleContainerClassName="bg-white/20 "
@@ -121,7 +124,10 @@ export const MapTextBox: FC<{ className?: string; onAllStepsCompleted?: () => vo
         }
         setShownPages(prev => new Set(prev).add(step - 1));
       }}
-      onFinalStepCompleted={onAllStepsCompleted}
+      onFinalStepCompleted={() => {
+        setShownPages(prev => new Set(prev).add(page.length));
+        if (onAllStepsCompleted) onAllStepsCompleted();
+      }}
       backButtonText="<"
       nextButtonText=">"
       stepCircleContainerClassName="bg-white/20 "
@@ -129,7 +135,7 @@ export const MapTextBox: FC<{ className?: string; onAllStepsCompleted?: () => vo
     >
       <Step>
         <div className="text-sm">
-          {/*shownPages.has(1)*/true ?(
+          {shownPages.has(1)?(
             <p className=" tracking-wide break-words mb-2 text-left">
               {page[0] ?? ""}
             </p>
@@ -149,7 +155,7 @@ export const MapTextBox: FC<{ className?: string; onAllStepsCompleted?: () => vo
       </Step>
       <Step>
         <div className="text-sm">
-          {/*shownPages.has(2)*/true ?(
+          {shownPages.has(2) ?(
             <p className="tracking-wide break-words mb-2">
               {page[1] ?? ""}
             </p>
@@ -169,7 +175,7 @@ export const MapTextBox: FC<{ className?: string; onAllStepsCompleted?: () => vo
       </Step>
       <Step>
         <div className="text-sm">
-          {/*shownPages.has(3)*/true ?(
+          {shownPages.has(3) ?(
             <p className="tracking-wide break-words mb-2">
               {page[2] ?? ""}
             </p>
@@ -189,7 +195,7 @@ export const MapTextBox: FC<{ className?: string; onAllStepsCompleted?: () => vo
       </Step>
       <Step>
         <div className="text-sm">
-          {/*shownPages.has(4)*/true ?(
+          {shownPages.has(4) ?(
             <p className="tracking-wide break-words mb-2">
               {page[3] ?? ""}
             </p>
@@ -209,7 +215,7 @@ export const MapTextBox: FC<{ className?: string; onAllStepsCompleted?: () => vo
       </Step>
             <Step>
         <div className="text-sm">
-          {/*shownPages.has(4)*/true ?(
+          {shownPages.has(4) ?(
             <p className="tracking-wide break-words mb-2">
               {page[4] ?? ""}
             </p>
@@ -245,7 +251,10 @@ export const LagoonTextBox: FC<{ className?: string; onAllStepsCompleted?: () =>
         }
         setShownPages(prev => new Set(prev).add(step - 1));
       }}
-      onFinalStepCompleted={onAllStepsCompleted}
+      onFinalStepCompleted={() => {
+        setShownPages(prev => new Set(prev).add(page.length));
+        if (onAllStepsCompleted) onAllStepsCompleted();
+      }}
       backButtonText="<"
       nextButtonText=">"
       stepCircleContainerClassName="bg-[#e1b908]/30"
@@ -254,7 +263,7 @@ export const LagoonTextBox: FC<{ className?: string; onAllStepsCompleted?: () =>
     >
       <Step>
         <div className="text-md">
-          {/*shownPages.has(1)*/true ?(
+          {shownPages.has(1) ?(
             <p className=" tracking-wide break-words mb-2 text-left">
               {page[0] ?? ""}
             </p>
@@ -274,7 +283,7 @@ export const LagoonTextBox: FC<{ className?: string; onAllStepsCompleted?: () =>
       </Step>
       <Step>
         <div className="text-md">
-          {/*shownPages.has(2)*/true ?(
+          {shownPages.has(2) ?(
             <p className="tracking-wide break-words mb-2">
               {page[1] ?? ""}
             </p>
@@ -294,7 +303,7 @@ export const LagoonTextBox: FC<{ className?: string; onAllStepsCompleted?: () =>
       </Step>
       <Step>
         <div className="text-md">
-          {/*shownPages.has(3)*/true ?(
+          {shownPages.has(3) ?(
             <p className="tracking-wide break-words mb-2">
               {page[2] ?? ""}
             </p>
@@ -314,7 +323,7 @@ export const LagoonTextBox: FC<{ className?: string; onAllStepsCompleted?: () =>
       </Step>
       <Step>
         <div className="text-md">
-          {/*shownPages.has(4)*/true ?(
+          {shownPages.has(4) ?(
             <p className="tracking-wide break-words mb-2">
               {page[3] ?? ""}
             </p>
