@@ -25,7 +25,7 @@ export const MenuTextBox: FC<{ className?: string; onAllStepsCompleted?: () => v
     >
       <Step>
         <div className="text-center">
-          {/*shownPages.has(1)*/true ?(
+          {shownPages.has(1) ?(
             <p className="text-lg tracking-wide break-words mb-4 text-balance">
               {page[0] ?? ""}
             </p>
@@ -45,7 +45,7 @@ export const MenuTextBox: FC<{ className?: string; onAllStepsCompleted?: () => v
       </Step>
       <Step>
         <div className="text-center">
-          {/*shownPages.has(2)*/true ?(
+          {shownPages.has(2) ?(
             <p className="text-lg tracking-wide break-words mb-4 text-balance">
               {page[1] ?? ""}
             </p>
@@ -65,7 +65,7 @@ export const MenuTextBox: FC<{ className?: string; onAllStepsCompleted?: () => v
       </Step>
       <Step>
         <div className="text-center">
-          {/*shownPages.has(3)*/true ?(
+          {shownPages.has(3)?(
             <p className="text-lg tracking-wide break-words mb-4 text-balance">
               {page[2] ?? ""}
             </p>
@@ -85,7 +85,7 @@ export const MenuTextBox: FC<{ className?: string; onAllStepsCompleted?: () => v
       </Step>
       <Step>
         <div className="text-center">
-          {/*shownPages.has(4)*/true ?(
+          {shownPages.has(4) ?(
             <p className="text-lg tracking-wide break-words mb-4 text-balance">
               {page[3] ?? ""}
             </p>

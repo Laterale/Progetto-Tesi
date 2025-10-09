@@ -11,13 +11,12 @@ export const MenuContent = () =>{
         updateStep(step-1)
       };
     const avatarImages = [
-    "/assets/MascotteAnnoyed.png",   // step 0
-    "/assets/MascotteFierce.png",     // step 1
-    "/assets/MascottePointing.png",  // step 2
-    "/assets/MascotteAnnoyed.png", // step 3
+    {src: "/assets/MascotteSmile.png", size:"h-[500px] w-[230px]"}, 
+    {src: "/assets/MascotteFierce.png", size:"h-[500px] w-[280px]"},
+    {src: "/assets/MascottePointing.png", size:"h-[500px] w-[280px]"},
+    {src: "/assets/MascotteSmile.png", size:"h-[500px] w-[230px]"},
     ]
-    const currentAvatar =
-    avatarImages[currentStep] ?? avatarImages[0]
+    const currentAvatar = avatarImages[currentStep] ?? avatarImages[0]
     return(
     <div className="h-full w-full grid grid-cols-3 grid-rows-7 font-hand pointer-events-auto pr-5 pl-5">
       <div className="col-span-3 flex justify-center items-center">
@@ -40,10 +39,10 @@ export const MenuContent = () =>{
       </div>
       <AnimatePresence mode="wait">
         <motion.img
-        key={currentAvatar}
-        src={currentAvatar}
+        key={currentAvatar?.src}
+        src={currentAvatar?.src}
         alt="Avatar"
-        className="absolute bottom-0 right-0 h-[500px] w-[250px] z-0"
+        className={`absolute bottom-0 right-0 ${currentAvatar?.size} z-0`}
         initial={{ opacity: 0, y: 0 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0 }}

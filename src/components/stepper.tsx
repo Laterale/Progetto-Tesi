@@ -204,9 +204,19 @@ function SlideTransition({ children, direction, onHeightReady }: SlideTransition
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   useLayoutEffect(() => {
-    if (containerRef.current) {
-      onHeightReady(containerRef.current.offsetHeight);
-    }
+    const el = containerRef.current;
+    if (!el) return;
+
+    // Imposta l’altezza iniziale
+    onHeightReady(el.offsetHeight);
+
+    // Osserva i cambiamenti di dimensione
+    const observer = new ResizeObserver(() => {
+      onHeightReady(el.offsetHeight);
+    });
+    observer.observe(el);
+
+    return () => observer.disconnect();
   }, [children, onHeightReady]);
 
   return (
