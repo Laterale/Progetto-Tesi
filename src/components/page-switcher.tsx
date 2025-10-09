@@ -7,9 +7,7 @@ export const pageIds = {
   menu: "menu",
   lagoon: "lagoon-map",
   drawings: "drawings",
-  chat: "chat",
   eu: "eu-map",
-  questionnaire: "ending",
 }
 
 const enabledPageIds = [
@@ -17,8 +15,6 @@ const enabledPageIds = [
   pageIds.lagoon,
   pageIds.drawings,
   pageIds.eu,
-  env.NEXT_PUBLIC_DISABLE_CHATBOT_PAGE ? false : pageIds.chat,
-  env.NEXT_PUBLIC_DISABLE_QUESTIONNAIRE_PAGE ? false : pageIds.questionnaire,
 ].filter(Boolean) as string[]
 
 const PageSwitcher: FC<{

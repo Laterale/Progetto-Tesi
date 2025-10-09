@@ -1,5 +1,4 @@
 import { Message, useChat } from "ai/react"
-import { motion } from "framer-motion"
 import { FC, useEffect, useRef, useState } from "react"
 import Markdown from "react-markdown"
 import PageSwitcher, { pageIds } from "~/components/page-switcher"
@@ -7,32 +6,6 @@ import cn from "~/lib/cn"
 import env from "~/lib/env"
 import { useDictionary, useLocale } from "~/lib/i18n"
 import { useSpeech } from "~/lib/speech"
-
-export const ChatBackground = () => {
-  return (
-    <motion.div
-      className="h-full w-full grid max-lg:grid-rows-2 lg:grid lg:grid-cols-5 pointer-events-none bg-sky-200"
-      initial={{ opacity: 0, translateY: 100 }}
-      animate={{ opacity: 1, translateY: 0 }}
-      exit={{ opacity: 0, translateY: 100 }}
-      transition={{ duration: 0.7 }}
-    >
-      <div className="lg:col-span-2 font-hand p-8" />
-      <div className="lg:col-span-3 lg:max-h-screen relative bg-sky-100 [background-image:url(/assets/chat-background.svg)] [background-size:150px]">
-        <img
-          src="/assets/drawings/separator-h.svg"
-          alt=""
-          className="lg:hidden absolute left-0 -top-1 w-full"
-        />
-        <img
-          src="/assets/drawings/separator-v.svg"
-          alt=""
-          className="hidden lg:block absolute top-0 -left-2 h-full"
-        />
-      </div>
-    </motion.div>
-  )
-}
 
 export const ChatContent = () => {
   const { chat: dictionary } = useDictionary()

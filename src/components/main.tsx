@@ -1,15 +1,13 @@
 "use client"
 import { useEffect, useRef } from "react"
 import { pageIds } from "~/components/page-switcher"
-// import BreakpointDisplay from "~/components/breakpoint-display"
 import { MenuContent } from "./sections/section1-menu"
 import { EuMapContent } from "~/components/sections/section4-eu-map"
 import { LagoonMapContent } from "~/components/sections/section2-lagoon-map"
 import { DrawingsContent } from "~/components/sections/section3-drawings"
-import { ChatContent } from "~/components/sections/chatbot"
 import { EndingContent } from "~/components/sections/section5-ending"
+import { ChatbotPanel } from "~/components/chatbot-panel"
 import env from "~/lib/env"
-
 import Particles from "./bg"
 
 const Main = () => {
@@ -18,8 +16,6 @@ const Main = () => {
   const div1 = useRef<HTMLDivElement>(null)
   const div2 = useRef<HTMLDivElement>(null)
   const div3 = useRef<HTMLDivElement>(null)
-  const div4 = useRef<HTMLDivElement>(null)
-  const div5 = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const blockScroll = (e: Event) => e.preventDefault()
@@ -30,7 +26,7 @@ const Main = () => {
   return (
     <>
       {/* <BreakpointDisplay /> */}
-      <div className="fixed inset-0 flex bg-[#2282bf] pointer-events-auto">
+      <div className="fixed inset-0 flex bg-[#2293bf] pointer-events-auto">
         <Particles
         particleColors={['#ffffff', '#0960c4']}
         particleCount={200}
@@ -74,25 +70,8 @@ const Main = () => {
         >
           <EuMapContent />
         </section>
-        {!env.NEXT_PUBLIC_DISABLE_CHATBOT_PAGE && (
-          <section
-            ref={div4}
-            id={pageIds.chat}
-            className="h-screen snap-center pointer-events-none relative"
-          >
-            <ChatContent />
-          </section>
-        )}
-        {!env.NEXT_PUBLIC_DISABLE_QUESTIONNAIRE_PAGE && (
-          <section
-            ref={div5}
-            id={pageIds.questionnaire}
-            className="h-screen snap-center pointer-events-none relative"
-          >
-            <EndingContent />
-          </section>
-        )}
       </div>
+      <ChatbotPanel/>
     </>
   )
 }

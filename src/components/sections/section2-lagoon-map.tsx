@@ -12,12 +12,30 @@ export const LagoonMapContent = () => {
   const handleStepChange = (step: number) => {
     updateStep(step-1)
   };
-  const stepImages = [
-  { id: 0, src: "/assets/icon.png", alt: "marker 1", position: "left-10 bottom-40" },
-  { id: 1, src: "/assets/icon.png", alt: "marker 2", position: "right-10 bottom-52" },
-  { id: 2, src: "/assets/icon.png", alt: "marker 3", position: "left-1/2 bottom-20 -translate-x-1/2"},
-  { id: 3, src: "/assets/icon.png", alt: "marker 4", position: "right-10 bottom-52"}
-  ];
+const stepImages = [
+  [
+    { src: "/assets/drawings/clam02c.png", alt: "marker 3", position: "right-32 bottom-40", size: "size-[40px]" },
+    { src: "/assets/drawings/fish05c.png", alt: "marker 3", position: "left-32 bottom-60", size: "h-[30px] w-[80px]" },
+    { src: "/assets/drawings/seahorse02c.png", alt: "marker 3", position: "right-40 bottom-80", size: "h-[50px] w-[30px]"},
+    { src: "/assets/drawings/boat04c.png", alt: "marker 3", position: "left-20 bottom-80", size: "size-[50px]" },
+  ],
+  [
+    { src: "/assets/dead-fish.png", alt: "dead fish 1", position: "left-32 bottom-52", size: "h-[50px] w-[100px]" },
+    { src: "/assets/dead-fish.png", alt: "dead fish 2", position: "left-40 bottom-96", size: "h-[30px] w-[80px]" },
+    { src: "/assets/dead-fish.png", alt: "dead fish 3", position: "left-20 bottom-80", size: "h-[20px] w-[50px]" },
+    { src: "/assets/dead-seahorse.png", alt: "dead seahorse 1", position: "right-32 bottom-44", size: "h-[30px] w-[50px]"},
+    { src: "/assets/dead-seahorse.png", alt: "dead sesahorse 2", position: "right-40 bottom-72", size: "h-[40px] w-[70px]"},
+  ],
+  [
+    { src: "/assets/drawings/buoy01c.png", alt: "buoy", position: "left-20 bottom-72", size: "h-[100px] w-[40px]" },
+    { src: "/assets/drawings/buoy01c.png", alt: "buoy", position: "right-32 bottom-40", size: "h-[70px] w-[30px]" },
+    { src: "/assets/drawings/buoy01c.png", alt: "buoy", position: "left-40 bottom-96", size: "h-[50px] w-[20px]" }
+  ],
+  [
+    { src: "/assets/icon.png", alt: "marker 3", position: "bottom-72 right-40", size: "size-[100px]" },
+  ],
+
+];
 
   return (
     <div className="h-full w-full grid grid-rows-8 grid-cols-4 font-hand pointer-events-auto pr-5 pl-5 bg-[url('/assets/mar-menor-bg.png')] bg-cover bg-no-repeat">
@@ -30,20 +48,26 @@ export const LagoonMapContent = () => {
         <LagoonTextBox updateStep={handleStepChange}/>
       </div>
       <AnimatePresence>
-        {stepImages
-          .filter((img) => img.id === currentStep)
-          .map((img) => (
-            <motion.img
-              key={img.id}
-              src={img.src}
-              alt={img.alt}
-              className={`absolute ${img.position} size-[120px] z-10 animate-bounce-slight`}
-              initial={{ opacity: 0, scale: 1 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 1 }}
-              transition={{ duration: 2, ease: "easeInOut" }}
-            />
-          ))}
+        <motion.div
+        key={currentStep}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+        >
+        {stepImages[currentStep]?.map((img, i) => (
+          <motion.img
+          key={i}
+          src={img.src}
+          alt={img.alt}
+          className={`absolute ${img.position} ${img.size} z-10 animate-bounce-slight`}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.8 }}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+          />
+        ))}
+        </motion.div>
       </AnimatePresence>
       <div className="absolute-center-x bottom-10 z-20">
         <PageSwitcher

@@ -3,7 +3,7 @@ import { useDictionary } from "~/lib/i18n";
 import TextType from "./spokenText";
 import Stepper, { Step } from "./stepper";
 
-export const MenuTextBox: FC<{ className?: string; onAllStepsCompleted?: () => void }> = ({ onAllStepsCompleted }) => {
+export const MenuTextBox: FC<{ className?: string; onAllStepsCompleted?: () => void, updateStep?: (step: number) => void }> = ({ onAllStepsCompleted, updateStep }) => {
   const { menu: dictionary } = useDictionary();
   const page = [dictionary.p1, dictionary.p2, dictionary.p3, dictionary.p4];
   const [shownPages, setShownPages] = useState(new Set<number>());
@@ -12,6 +12,9 @@ export const MenuTextBox: FC<{ className?: string; onAllStepsCompleted?: () => v
     <Stepper
       initialStep={1}
       onStepChange={(step) => {
+        if (updateStep) {
+          updateStep(step);
+        }
         setShownPages(prev => new Set(prev).add(step - 1));
       }}
       onFinalStepCompleted={onAllStepsCompleted}
