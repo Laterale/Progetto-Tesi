@@ -130,13 +130,14 @@ export const MapTextBox: FC<{ className?: string; onAllStepsCompleted?: () => vo
       }}
       backButtonText="<"
       nextButtonText=">"
-      stepCircleContainerClassName="bg-white/20 "
+      stepCircleContainerClassName="bg-[#F8B83A]/60"
+      circlesColor="#a8540f"
       disableStepIndicators
     >
       <Step>
         <div className="text-sm">
           {shownPages.has(1)?(
-            <p className=" tracking-wide break-words mb-2 text-left">
+            <p className=" tracking-wide break-words  mb-2 text-left">
               {page[0] ?? ""}
             </p>
             ) : (
@@ -257,8 +258,8 @@ export const LagoonTextBox: FC<{ className?: string; onAllStepsCompleted?: () =>
       }}
       backButtonText="<"
       nextButtonText=">"
-      stepCircleContainerClassName="bg-[#20da8d]/60"
-      circlesColor="#1071e7"
+      stepCircleContainerClassName="bg-[#F2E7DA]/70"
+      circlesColor="#2293bf"
       disableStepIndicators
     >
       <Step>
