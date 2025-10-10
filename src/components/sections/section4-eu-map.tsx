@@ -105,7 +105,7 @@ export const EuMapContent = () => {
     <div className="col-span-4 z-30">
       <MapTextBox updateMap={handleMapStepChange}/>    
     </div>
-    <img src="/assets/MascotteEarth.png" alt="Mascotte" className="absolute absolute-center-x bottom-96 h-[160px] w-[240px] z-20"/>
+    <img src="/assets/MascotteEarth.png" alt="Mascotte" className="absolute absolute-center-x bottom-96 h-[160px] w-[240px] z-30"/>
     <div className="absolute-center-x bottom-20 text-transparent flex items-center justify-center p-5 z-20">
       <div className="aspect-square w-[273px] rounded-full border-4 border-[#674717] overflow-hidden -translate-y-10">
       <Map
