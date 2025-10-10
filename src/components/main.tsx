@@ -69,6 +69,7 @@ const Main = () => {
           className="h-screen snap-center pointer-events-none relative"
         >
           <EuMapContent />
+          <img src="/assets/fondale.png" alt="fondale" className="w-full h-[40px] absolute bottom-0 z-0" />
         </section>
       </div>
       <ChatbotPanel/>
