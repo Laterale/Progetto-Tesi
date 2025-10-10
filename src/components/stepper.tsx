@@ -292,7 +292,7 @@ function StepIndicator({ step, currentStep, circlesColor, onClickStep, disableSt
         className="flex h-5 w-5 items-center justify-center rounded-full font-semibold"
       >
         {status === 'complete' ? (
-          <CheckIcon className="h-4 w-4" />
+          <div className="h-2 w-2 rounded-full bg-white" />
         ) : status === 'active' ? (
           <div className="h-2 w-2 rounded-full bg-white" />
         ) : (
@@ -323,27 +323,5 @@ function StepConnector({ isComplete }: StepConnectorProps) {
         transition={{ duration: 0.6 }}
       />
     </div>
-  );
-}
-
-interface CheckIconProps extends React.SVGProps<SVGSVGElement> {}
-
-function CheckIcon(props: CheckIconProps) {
-  return (
-    <svg {...props} fill="none" stroke="white" strokeWidth={3} viewBox="0 0 24 24">
-      <motion.path
-        initial={{ pathLength: 0 }}
-        animate={{ pathLength: 1 }}
-        transition={{
-          delay: 0.1,
-          type: 'tween',
-          ease: 'easeOut',
-          duration: 0.3
-        }}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M5 13l4 4L19 7"
-      />
-    </svg>
   );
 }

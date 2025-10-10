@@ -27,9 +27,7 @@ const stepImages = [
     { src: "/assets/dead-seahorse.png", alt: "dead sesahorse 2", position: "right-40 bottom-72", size: "h-[40px] w-[70px]"},
   ],
   [
-    { src: "/assets/drawings/buoy01c.png", alt: "buoy", position: "left-20 bottom-72", size: "h-[100px] w-[40px]" },
-    { src: "/assets/drawings/buoy01c.png", alt: "buoy", position: "right-32 bottom-40", size: "h-[70px] w-[30px]" },
-    { src: "/assets/drawings/buoy01c.png", alt: "buoy", position: "left-40 bottom-96", size: "h-[50px] w-[20px]" }
+    { src: "/assets/drawings/buoy01c.png", alt: "buoy", position: "left-32 bottom-80", size: "h-[80px] w-[30px]" },
   ],
   [
     { src: "/assets/icon.png", alt: "marker 3", position: "bottom-72 right-40", size: "size-[100px]" },

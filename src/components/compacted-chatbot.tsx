@@ -43,7 +43,7 @@ export const CompactChat: FC = () => {
   return (
     <div className="flex flex-col w-full h-[70vh] max-h-[600px] bg-transparent rounded-2xl border-2 border-black shadow-lg overflow-hidden">
       {/* Messaggi */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-4">
+      <div className="flex-1 overflow-y-auto p-4 space-y-4 pt-14">
         {messages.map((m) => (
           <ChatMessage key={m.id} message={m} />
         ))}

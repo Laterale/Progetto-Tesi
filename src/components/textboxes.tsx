@@ -257,14 +257,14 @@ export const LagoonTextBox: FC<{ className?: string; onAllStepsCompleted?: () =>
       }}
       backButtonText="<"
       nextButtonText=">"
-      stepCircleContainerClassName="bg-[#e1b908]/30"
+      stepCircleContainerClassName="bg-[#20da8d]/60"
       circlesColor="#1071e7"
       disableStepIndicators
     >
       <Step>
         <div className="text-md">
           {shownPages.has(1) ?(
-            <p className=" tracking-wide break-words mb-2 text-left">
+            <p className=" tracking-wide break-words  mb-2 text-left">
               {page[0] ?? ""}
             </p>
             ) : (

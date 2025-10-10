@@ -13,14 +13,14 @@ export const ChatbotPanel = () => {
       <button
         onClick={() => setIsOpen(true)}
         className="
-          fixed bottom-96 left-6 z-50
+          fixed bottom-96 left-3 z-50
           bg-transparent hover:bg-blue-700 text-white
           rounded-full shadow-lg
           transition-all duration-300
-          focus:outline-none focus:ring-4 focus:ring-blue-300
+          focus:outline-none focus:ring-4 focus:ring-blue-300 
         "
       >
-        <img src="/assets/icon.png" alt="" className="size-[50px]"/>
+        <img src="/assets/MascotteIcon2.png" alt="" className="size-[80px] animate-bounce-slight"/>
       </button>
 
       {/* Animated Modal Panel */}
@@ -49,11 +49,11 @@ export const ChatbotPanel = () => {
             >
         <div className="relative w-[90%] max-w-3xl bg-[#3bb5d4] rounded-2xl shadow-2xl md:p-10">
         {/* Avatar circolare */}
-          <div className="absolute -top-10 left-1/2 -translate-x-1/2">
+          <div className="absolute -top-20 left-1/2 -translate-x-1/2">
             <img
-            src="/assets/icon.png"
+            src="/assets/MascotteIcon2.png"
             alt="Chatbot Avatar"
-            className="w-20 h-20 rounded-full  shadow-lg object-cover"
+            className="size-[150px] rounded-full object-cover animate"
             />
           </div>
           {/* Close button */}

@@ -90,7 +90,7 @@ const data: Record[] = [
       "/assets/scans/IMG00027.jpg",
       "/assets/scans/IMG00028.jpg",
     ],
-    triggerClass: "[grid-area:6/6/6/6] md:[grid-area:6/3/6/4] lg:[grid-area:8/3/8/4] relative",
+    triggerClass: "[grid-area:6/7/6/7] md:[grid-area:6/3/6/4] lg:[grid-area:8/3/8/4] relative",
     imageWrapperClass: "w-36 absolute-center",
     imageClass: "object-contain animate-bounce-slight",
     imageStyle: {
