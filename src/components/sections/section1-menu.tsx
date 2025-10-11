@@ -11,7 +11,7 @@ export const MenuContent = () =>{
         updateStep(step-1)
       };
     const avatarImages = [
-    {src: "/assets/MascotteSmile.png", size:"h-[500px] w-[200px]"}, 
+    {src: "/assets/MascotteSmile.png", size:"h-[500px] w-[190px]"}, 
     {src: "/assets/MascotteFierce.png", size:"h-[500px] w-[280px]"},
     {src: "/assets/MascottePointing.png", size:"h-[500px] w-[280px]"},
     {src: "/assets/MascotteSmile.png", size:"h-[500px] w-[190px]"},

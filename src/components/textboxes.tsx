@@ -36,7 +36,6 @@ export const MenuTextBox: FC<{ className?: string; onAllStepsCompleted?: () => v
             <TextType
             className="text-lg tracking-wide break-words mb-4"
             text={page[0] ?? ""}
-            typingSpeed={50}
             pauseDuration={1500}
             showCursor={true}
             cursorCharacter=""
@@ -56,7 +55,6 @@ export const MenuTextBox: FC<{ className?: string; onAllStepsCompleted?: () => v
             <TextType
             className="text-lg tracking-wide break-words mb-4"
             text={page[1] ?? ""}
-            typingSpeed={50}
             pauseDuration={1500}
             showCursor={true}
             cursorCharacter=""
@@ -76,7 +74,6 @@ export const MenuTextBox: FC<{ className?: string; onAllStepsCompleted?: () => v
             <TextType
             className="text-lg tracking-wide break-words mb-4"
             text={page[2] ?? ""}
-            typingSpeed={50}
             pauseDuration={1500}
             showCursor={true}
             cursorCharacter=""
@@ -96,7 +93,6 @@ export const MenuTextBox: FC<{ className?: string; onAllStepsCompleted?: () => v
             <TextType
             className="text-lg tracking-wide break-words mb-4"
             text={page[3] ?? ""}
-            typingSpeed={50}
             pauseDuration={1500}
             showCursor={true}
             cursorCharacter=""
@@ -144,7 +140,6 @@ export const MapTextBox: FC<{ className?: string; onAllStepsCompleted?: () => vo
             <TextType
             className="tracking-wide break-words mb-2"
             text={page[0] ?? ""}
-            typingSpeed={50}
             pauseDuration={1500}
             showCursor={true}
             cursorCharacter=""
@@ -164,7 +159,6 @@ export const MapTextBox: FC<{ className?: string; onAllStepsCompleted?: () => vo
             <TextType
             className="tracking-wide break-words mb-2"
             text={page[1] ?? ""}
-            typingSpeed={50}
             pauseDuration={1500}
             showCursor={true}
             cursorCharacter=""
@@ -184,7 +178,6 @@ export const MapTextBox: FC<{ className?: string; onAllStepsCompleted?: () => vo
             <TextType
             className="tracking-wide break-words mb-2"
             text={page[2] ?? ""}
-            typingSpeed={50}
             pauseDuration={1500}
             showCursor={true}
             cursorCharacter=""
@@ -204,7 +197,6 @@ export const MapTextBox: FC<{ className?: string; onAllStepsCompleted?: () => vo
             <TextType
             className="tracking-wide break-words mb-2"
             text={page[3] ?? ""}
-            typingSpeed={50}
             pauseDuration={1500}
             showCursor={true}
             cursorCharacter=""
@@ -224,7 +216,6 @@ export const MapTextBox: FC<{ className?: string; onAllStepsCompleted?: () => vo
             <TextType
             className="tracking-wide break-words mb-2"
             text={page[4] ?? ""}
-            typingSpeed={50}
             pauseDuration={1500}
             showCursor={true}
             cursorCharacter=""
@@ -263,16 +254,15 @@ export const LagoonTextBox: FC<{ className?: string; onAllStepsCompleted?: () =>
       disableStepIndicators
     >
       <Step>
-        <div className="text-md">
+        <div className="text-sm">
           {shownPages.has(1) ?(
-            <p className=" tracking-wide break-words  mb-2 text-left">
+            <p className=" tracking-wide break-words mb-2 text-left">
               {page[0] ?? ""}
             </p>
             ) : (
             <TextType
             className="tracking-wide break-words mb-2"
             text={page[0] ?? ""}
-            typingSpeed={50}
             pauseDuration={1500}
             showCursor={true}
             cursorCharacter=""
@@ -283,7 +273,7 @@ export const LagoonTextBox: FC<{ className?: string; onAllStepsCompleted?: () =>
         </div>
       </Step>
       <Step>
-        <div className="text-md">
+        <div className="text-sm">
           {shownPages.has(2) ?(
             <p className="tracking-wide break-words mb-2">
               {page[1] ?? ""}
@@ -292,7 +282,6 @@ export const LagoonTextBox: FC<{ className?: string; onAllStepsCompleted?: () =>
             <TextType
             className="tracking-wide break-words mb-2"
             text={page[1] ?? ""}
-            typingSpeed={50}
             pauseDuration={1500}
             showCursor={true}
             cursorCharacter=""
@@ -303,7 +292,7 @@ export const LagoonTextBox: FC<{ className?: string; onAllStepsCompleted?: () =>
         </div>
       </Step>
       <Step>
-        <div className="text-md">
+        <div className="text-sm">
           {shownPages.has(3) ?(
             <p className="tracking-wide break-words mb-2">
               {page[2] ?? ""}
@@ -312,7 +301,6 @@ export const LagoonTextBox: FC<{ className?: string; onAllStepsCompleted?: () =>
             <TextType
             className="tracking-wide break-words mb-2"
             text={page[2] ?? ""}
-            typingSpeed={50}
             pauseDuration={1500}
             showCursor={true}
             cursorCharacter=""
@@ -323,7 +311,7 @@ export const LagoonTextBox: FC<{ className?: string; onAllStepsCompleted?: () =>
         </div>
       </Step>
       <Step>
-        <div className="text-md">
+        <div className="text-sm">
           {shownPages.has(4) ?(
             <p className="tracking-wide break-words mb-2">
               {page[3] ?? ""}
@@ -332,7 +320,6 @@ export const LagoonTextBox: FC<{ className?: string; onAllStepsCompleted?: () =>
             <TextType
             className="tracking-wide break-words mb-2"
             text={page[3] ?? ""}
-            typingSpeed={50}
             pauseDuration={1500}
             showCursor={true}
             cursorCharacter=""

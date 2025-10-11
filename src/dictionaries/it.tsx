@@ -2,25 +2,26 @@ import { MainDictionary } from "~/dictionaries/en"
 
 export default {
   menu: {
-    p1: "Benvenuto su SketchLagoon!",
-    p2: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.",
-    p3: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.",
-    p4: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidunt ut labore et dolore magna aliqua.",
+    p1: "Ciao amici! Io sono Laguno, il Protettore della laguna del Mar Menor! Vi do il benvenuto su SKETCHLAGOON con un grande sorriso e una pinna alzata!",
+    p2: "Sono nato per difendere questa laguna meravigliosa, un tesoro che però sta soffrendo. La mia missione è proteggerla e far conoscere a tutti quanto sia importante prenderci cura di lei.",
+    p3: "Ma sapete una cosa? Anche voi fate parte di questa avventura! Ogni piccolo gesto per l’ambiente aiuta il Mar Menor a respirare meglio. Insieme possiamo far tornare limpide le sue acque!",
+    p4: "E ora, avanti giovani esploratori! Nella prossima sezione vi racconterò meglio cosa sta succedendo al Mar Menor e come possiamo aiutarlo... con cuore, curiosità e tanti disegni colorati!",
   },  
   lagoonMap: {
     title: "IL MAR MENOR",
-    p0: "La laguna del Mar Menor in Spagna è la più grande laguna di acqua salata d'Europa, famosa per le sue acque limpide e le tante specie di animali che vi abitano, oltre ad essere un luogo importante per la pesca e il turismo.",
-    p1: "Ma il fragile equilibrio del Mar Menor si trova ad affrontare grandi sfide, come il cambiamento climatico e l'inquinamento provocato dall'agricoltura e dalle città.",
-    p2: "SMARTLAGOON è un progetto che utilizza tecnologie avanzate per aiutare gli scienziati a comprendere i problemi ambientali che la laguna sta affrontando.",
-    p3: "Il progetto mira anche a sensibilizzare le persone in modo che agiscano per proteggere questo delicato ecosistema.",
+    p0: "Benvenuti nella mia casa, amici! Guardate che meraviglia: il Mar Menor! È la più grande laguna di acqua salata d'Europa, dove vivono pesci curiosi, cavallucci marini eleganti, vongole che amano nascondersi nella sabbia e tante altre specie di animali!",
+    p1: "Oh… guardate, amici miei. Il Mar Menor non sorride più. I miei amici pesci e cavallucci marini faticano a vivere. Troppi fertilizzanti e rifiuti arrivano dai campi e dalle città, finendo nell’acqua. Questo fa crescere troppe alghe che consumano l’ossigeno e gli animali non riescono più a respirare. Anche il clima più caldo peggiora tutto. La laguna ha davvero bisogno di noi.",
+    p2: "Ehi, guardate là! Quella boa che galleggia sull’acqua non è una semplice boa… è parte del progetto SMARTLAGOON! Dentro ha sensori speciali che ascoltano la laguna e raccolgono informazioni importanti per gli scienziati, così da comprendere i problemi ambientali che la laguna sta affrontando.",
+    p3: "Il progetto SMARTLAGOON non serve solo a studiare la laguna, ma anche a far capire alle persone quanto sia importante proteggerla. Ognuno di noi può fare la differenza! Ora seguitemi… andiamo sott’acqua, dove i bambini hanno disegnato la laguna!",
   },
   drawings: {
     title: "ATTRAVERSO LO SGUARDO DEI BAMBINI",
     description: (
       <>
         <p>
-          Abbiamo chiesto a bambini che vivono nell'area del Mar Menor di disegnare la laguna.
+          Abbiamo chiesto a bambini che vivono nell’area del Mar Menor di disegnare la laguna.
           Questo è quello che hanno creato.
+          Guardate! Ci sono pesci, cavallucci marini, granchi, ma anche altro. Ogni disegno racconta amore, ma anche preoccupazione per la laguna.
         </p>
       </>
     ),
@@ -135,7 +136,8 @@ export default {
     p1: "Un tempo gioiello del Mediterraneo, oggi il Mar Menor è simbolo della crisi ambientale costiera, ma non è un caso isolato. In Europa, altre lagune affrontano sfide simili: pressioni turistiche, inquinamento agricolo e cambiamenti climatici stanno mettendo a rischio ecosistemi delicati e preziosi.",
     p2: "Nel cuore del Mediterraneo, una laguna antica quanto la città che la abita deve fare i conti con la modernità. Tra turismo di massa, navigazione e innalzamento del mare, anche qui la natura fatica a respirare. La sua storia millenaria ci ricorda che la bellezza, senza equilibrio ecologico, rischia di diventare solo memoria.",
     p3: "Più a nord, un’altra laguna racconta una storia diversa ma affine. Qui l’inquinamento proveniente dai fiumi e l’attività industriale hanno alterato profondamente l’ecosistema. Le acque, condivise da due Paesi, mostrano come la cooperazione internazionale sia fondamentale per la rinascita di ambienti così complessi.",
-    p4: "Ogni laguna è diversa, ma tutte raccontano la stessa urgenza: proteggere ciò che resta e ripensare il nostro rapporto con l’acqua. Solo comprendendo queste connessioni possiamo sperare in un futuro in cui il Mar Menor — e tutte le sue sorelle — tornino a vivere.",
+    p4: "Ogni laguna è diversa, ma tutte raccontano la stessa urgenza: proteggere ciò che resta e ripensare il nostro rapporto con l’acqua. Solo comprendendo queste connessioni possiamo sperare in un futuro in cui il Mar Menor e tutte le sue sorelle tornino a vivere.",
+    p5: "Grazie, amici, per avermi accompagnato! Continuate a prendervi cura del mare… io vi terrò d’occhio da sotto le onde!",
   },
   chat: {
     title: "Chat",

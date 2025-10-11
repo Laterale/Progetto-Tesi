@@ -136,6 +136,7 @@ export default {
     p2: "Nel cuore del Mediterraneo, una laguna antica quanto la città che la abita deve fare i conti con la modernità. Tra turismo di massa, navigazione e innalzamento del mare, anche qui la natura fatica a respirare. La sua storia millenaria ci ricorda che la bellezza, senza equilibrio ecologico, rischia di diventare solo memoria.",
     p3: "Più a nord, un’altra laguna racconta una storia diversa ma affine. Qui l’inquinamento proveniente dai fiumi e l’attività industriale hanno alterato profondamente l’ecosistema. Le acque, condivise da due Paesi, mostrano come la cooperazione internazionale sia fondamentale per la rinascita di ambienti così complessi.",
     p4: "Ogni laguna è diversa, ma tutte raccontano la stessa urgenza: proteggere ciò che resta e ripensare il nostro rapporto con l’acqua. Solo comprendendo queste connessioni possiamo sperare in un futuro in cui il Mar Menor — e tutte le sue sorelle — tornino a vivere.",
+    p5: ""
   },
   chat: {
     title: "Chat",
