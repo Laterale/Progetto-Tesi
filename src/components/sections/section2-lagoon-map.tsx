@@ -3,7 +3,7 @@ import { useDictionary } from "~/lib/i18n"
 import { LagoonTextBox } from "../textboxes";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import { useInView } from "~/components/useInView";
 
 
 export const LagoonMapContent = () => {
@@ -44,6 +44,7 @@ export const LagoonMapContent = () => {
     {src: "/assets/MascotteSmile.png", size:"h-[500px] w-[190px]"},
   ]
   const currentAvatar = avatarImages[currentStep] ?? avatarImages[0]
+  const { ref, isInView } = useInView({ threshold: 0.5 });
   return (
     <div className="h-full w-full right-8 grid grid-rows-8 grid-cols-4 font-hand pointer-events-auto pr-5 pl-5 bg-[url('/assets/mar-menor-bg.png')] bg-cover bg-no-repeat">
       <div className="col-span-4 flex justify-center items-center">
@@ -51,8 +52,8 @@ export const LagoonMapContent = () => {
           {dictionary.title}
         </h1>
       </div>
-      <div className="col-span-4 z-20">
-        <LagoonTextBox updateStep={handleStepChange}/>
+      <div ref={ref} className="col-span-4 z-20">
+        {isInView &&<LagoonTextBox updateStep={handleStepChange}/>}
       </div>
       <AnimatePresence>
         <motion.div

@@ -3,6 +3,7 @@ import StartButton  from "../start-button"
 import {MenuTextBox} from "../textboxes"
 import LocaleSwitcher from "../locale-switcher"
 import { useState } from "react"
+import { useInView } from "~/components/useInView";
 
 export const MenuContent = () =>{
     const [canStart, setCanStart] = useState(false);
@@ -17,6 +18,7 @@ export const MenuContent = () =>{
     {src: "/assets/MascotteSmile.png", size:"h-[500px] w-[190px]"},
     ]
     const currentAvatar = avatarImages[currentStep] ?? avatarImages[0]
+    const { ref, isInView } = useInView({ threshold: 0.5 });
     return(
     <div className="h-full w-full grid grid-cols-3 grid-rows-7 font-hand pointer-events-auto pr-5 pl-5">
       <div className="col-span-3 flex justify-center items-center">
@@ -31,11 +33,8 @@ export const MenuContent = () =>{
           </h1>
         </div>
       </div>
-      <div className="col-start-1 row-start-2 col-span-3 items-start z-10">
-        <MenuTextBox 
-        onAllStepsCompleted={() => setCanStart(true)}
-        updateStep={handleStepChange}
-        />    
+      <div ref={ref} className="col-start-1 row-start-2 col-span-3 items-start z-10">
+        {isInView && <MenuTextBox onAllStepsCompleted={() => setCanStart(true)} updateStep={handleStepChange}/>}    
       </div>
       <AnimatePresence mode="wait">
         <motion.img

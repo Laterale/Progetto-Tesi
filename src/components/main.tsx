@@ -5,9 +5,7 @@ import { MenuContent } from "./sections/section1-menu"
 import { EuMapContent } from "~/components/sections/section4-eu-map"
 import { LagoonMapContent } from "~/components/sections/section2-lagoon-map"
 import { DrawingsContent } from "~/components/sections/section3-drawings"
-import { EndingContent } from "~/components/sections/section5-ending"
 import { ChatbotPanel } from "~/components/chatbot-panel"
-import env from "~/lib/env"
 import Particles from "./bg"
 
 const Main = () => {

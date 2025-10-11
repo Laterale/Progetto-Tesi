@@ -4,6 +4,7 @@ import { useDictionary } from "~/lib/i18n"
 import {useRef, useCallback, useEffect} from 'react';
 import Map, {MapRef, Marker} from 'react-map-gl/mapbox';
 import { MapTextBox } from "../textboxes";
+import { useInView } from "~/components/useInView";
 
 const MAPBOX_TOKEN = 'pk.eyJ1IjoibGF0ZXJhbGUiLCJhIjoiY21mOGc4a2FzMG96eDJqczY2bjZ2ZWJ3NiJ9.edTo59w8IaMW2MhiESU7gw';
 const initialViewState = {
@@ -95,6 +96,7 @@ export const EuMapContent = () => {
     },
     []
   );
+  const { ref, isInView } = useInView({ threshold: 0.5 });
   return (
   <div className="h-full w-full grid grid-cols-4 grid-rows-8 font-hand pointer-events-auto pr-5 pl-5">
     <div className="col-span-4 flex justify-center items-center">
@@ -102,8 +104,8 @@ export const EuMapContent = () => {
         {dictionary.title}
       </h1>
     </div>
-    <div className="col-span-4 z-30">
-      <MapTextBox updateMap={handleMapStepChange}/>    
+    <div ref={ref} className="col-span-4 z-30">
+      {isInView && <MapTextBox updateMap={handleMapStepChange}/>}  
     </div>
     <img src="/assets/MascotteEarth.png" alt="Mascotte" className="absolute absolute-center-x bottom-96 h-[160px] w-[240px] z-30"/>
     <div className="absolute-center-x bottom-20 text-transparent flex items-center justify-center p-5 z-20">
