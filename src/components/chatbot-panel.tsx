@@ -14,10 +14,8 @@ export const ChatbotPanel = () => {
         onClick={() => setIsOpen(true)}
         className="
           fixed bottom-96 left-3 z-50
-          bg-transparent hover:bg-blue-700 text-white
-          rounded-full shadow-lg
-          transition-all duration-300
-          focus:outline-none focus:ring-4 focus:ring-blue-300 
+          bg-transparent text-white
+          rounded-full transition-all duration-300
         "
       >
         <img src="/assets/MascotteIcon2.png" alt="" className="size-[80px] animate-bounce-slight"/>

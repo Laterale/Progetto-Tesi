@@ -29,7 +29,7 @@ export const MenuTextBox: FC<{ className?: string; onAllStepsCompleted?: () => v
       <Step>
         <div className="text-center">
           {shownPages.has(1) ?(
-            <p className="text-lg tracking-wide break-words mb-4 text-balance">
+            <p className="text-lg tracking-wide break-words mb-4">
               {page[0] ?? ""}
             </p>
             ) : (

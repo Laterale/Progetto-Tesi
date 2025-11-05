@@ -27,15 +27,19 @@ export const DrawingsContent = () => {
 
   return (
     <div className="h-full w-full overflow-hidden pointer-events-auto font-hand p-5 bg-[url('/assets/drawings-bg.png')] bg-cover">
-      <h1 className="text-[clamp(1.5rem,6vw,3rem)] text-center tracking-wide break-words leading-snug animate-bounce-slight">
-        {dictionary.title}
-      </h1>
-      <div className="text-base tracking-wide text-balance lg:text-left text-center row-start-2 lg:col-span-1 col-span-2 mt-20">
-        {dictionary.description}
-      </div>
-      <p className="text-lg tracking-wide text-balance text-center">
-        {dictionary.hint}
-      </p>
+      <div className="bg-white/50 border-2 border-black rounded-3xl px-3 py-3 relative">
+        <p className="text-sm tracking-wide text-right">
+          {dictionary.description}
+        </p>
+        <p className="text-sm text-purple-600 tracking-wide mt-5 animate-bounce text-right">
+          {dictionary.hint}
+        </p>
+        <img 
+        src="/assets/MascotteIcon.png" 
+        alt="Character avatar"
+        className="w-20 h-20 absolute -top-6 -left-7 pointer-events-none"
+        />
+       </div>
       <div className="grid grid-cols-12 grid-rows-12 absolute inset-0">
         {data.map((record) => (
           <Popover

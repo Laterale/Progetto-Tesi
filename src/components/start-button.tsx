@@ -1,7 +1,6 @@
 import cn from "~/lib/cn"
 import { ButtonHTMLAttributes, FC } from "react"
 import { pageIds } from "~/components/page-switcher"
-//import { useDictionary } from "~/lib/i18n"
 
 interface StartButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;

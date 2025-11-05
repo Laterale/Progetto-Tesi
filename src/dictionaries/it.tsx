@@ -20,8 +20,7 @@ export default {
       <>
         <p>
           Abbiamo chiesto a bambini che vivono nell’area del Mar Menor di disegnare la laguna.
-          Questo è quello che hanno creato.
-          Guardate! Ci sono pesci, cavallucci marini, granchi, ma anche altro. Ogni disegno racconta amore, ma anche preoccupazione per la laguna.
+          Guardate! Ci sono pesci, cavallucci marini, granchi, ma anche altro. Ogni disegno racconta amore, ma anche preoccupazione.
         </p>
       </>
     ),

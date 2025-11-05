@@ -181,7 +181,7 @@ function StepContentWrapper({
         {isCompleted ?        
         <SlideTransition key={currentStep} direction={direction} onHeightReady={h => setParentHeight(h)}>
           <div className="flex justify-center items-center">
-            <img className="size-20" src="/assets/icon.png" alt=""/>
+            <img className="size-20" src="/assets/MascotteIcon.png" alt=""/>
           </div>
         </SlideTransition>
         :
